@@ -57,10 +57,10 @@ def client():
 
 @app.route("/joystick")
 def joystick():
-    data = request.args.get("data")
+    data = json.loads(request.args.get("data"))
     if data:
         print(data)
     return ""
 
 
-app.run(host="192.168.42.6", port=5000)
+app.run(host="192.168.42.6", port=8080)

@@ -19,6 +19,7 @@
         You should have received a copy of the GNU General Public License
         along with this program.  If not, see <https://www.gnu.org/licenses/>.
     -->
+    <title>B3rry Client</title>
     <style>
         body {
             overflow: hidden;
@@ -59,8 +60,14 @@
             }
         }
         var manager = nipplejs.create(options);
-        manager.on("start move end", function(event, data){
+        manager.on("start move", function(event, data){
             data = JSON.stringify(manager.get(0).frontPosition);
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "/joystick?data="+data);
+            xhr.send();
+        });
+        manager.on("end", function(event, data){
+            data = JSON.stringify({x: 0, y: 0});
             var xhr = new XMLHttpRequest();
             xhr.open("GET", "/joystick?data="+data);
             xhr.send();
