@@ -31,6 +31,13 @@
             height: 300px;
             width: 300px;
         }
+        #rightjoy {
+            position: absolute;
+            top: 180px;
+            right: 0;
+            height: 300px;
+            width: 300px;
+        }
         img {
             width: 100%;
         }
@@ -44,11 +51,12 @@
 </head>
 <body>
     <div id="leftjoy"></div>
+    <div id="rightjoy"></div>
     <div>
         <img src="{{ url_for('stream') }}" width="100%">
     </div>
     <script>
-        var options = {
+        var leftoptions = {
             zone: $("leftjoy"),
             color: "gray",
             mode: "static",
@@ -59,17 +67,41 @@
                 left: "120px"
             }
         }
-        var manager = nipplejs.create(options);
-        manager.on("start move", function(event, data){
-            data = JSON.stringify(manager.get(0).frontPosition);
+        var leftjoy = nipplejs.create(leftoptions);
+        leftjoy.on("start move", function(event, data){
+            data = JSON.stringify(leftjoy.get(0).frontPosition);
             var xhr = new XMLHttpRequest();
             xhr.open("GET", "/joystick?data="+data);
             xhr.send();
         });
-        manager.on("end", function(event, data){
+        leftjoy.on("end", function(event, data){
             data = JSON.stringify({x: 0, y: 0});
             var xhr = new XMLHttpRequest();
             xhr.open("GET", "/joystick?data="+data);
+            xhr.send();
+        });
+        var rightoptions = {
+            zone: $("rightjoy"),
+            color: "gray",
+            mode: "static",
+            size: 130,
+            restOpacity: 0.8,
+            position: {
+                top: "170px",
+                right: "120px"
+            }
+        }
+        var rightjoy = nipplejs.create(rightoptions);
+        rightjoy.on("start move", function(event, data){
+            data = JSON.stringify(leftjoy.get(0).frontPosition);
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "/pantilt?data="+data);
+            xhr.send();
+        });
+        rightjoy.on("end", function(event, data){
+            data = JSON.stringify({x: 0, y: 0});
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "/pantilt?data="+data);
             xhr.send();
         });
     </script>

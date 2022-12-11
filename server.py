@@ -63,4 +63,12 @@ def joystick():
     return ""
 
 
+@app.route("/pantilt")
+def pantilt():
+    data = json.loads(request.args.get("data"))
+    if data:
+        print(data)
+    return ""
+
+
 app.run(host="192.168.42.6", port=8080)
