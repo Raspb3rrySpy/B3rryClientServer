@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <!--
-        index.html
-        Index html file for B3rry client
+        client.html
+        Client html file for B3rry client
         Copyright (C) 2022  Aiden Bohlander
 
         This program is free software: you can redistribute it and/or modify
@@ -19,8 +19,53 @@
         You should have received a copy of the GNU General Public License
         along with this program.  If not, see <https://www.gnu.org/licenses/>.
     -->
+    <style>
+        body {
+            overflow: hidden;
+        }
+        #leftjoy {
+            position: absolute;
+            top: 180px;
+            left: 0;
+            height: 300px;
+            width: 300px;
+        }
+        img {
+            width: 100%;
+        }
+    </style>
+    <script src="../static/nipplejs.min.js"></script>
+    <script>
+        function $(id){
+            return document.getElementById(id)
+        }
+    </script>
 </head>
 <body>
-    <img src="{{ url_for('stream') }}" width="100%">
+    <div id="leftjoy"></div>
+    <div>
+        <img src="{{ url_for('stream') }}" width="100%">
+    </div>
+    <script>
+        var options = {
+            zone: $("leftjoy"),
+            color: "gray",
+            mode: "static",
+            size: 130,
+            restOpacity: 0.8,
+            position: {
+                top: "170px",
+                left: "120px"
+            }
+        }
+        var manager = nipplejs.create(options);
+        manager.on("start move end", function(event, data){
+            data = JSON.stringify(manager.get(0).frontPosition);
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "/joystick?data="+data);
+            xhr.send();
+        });
+    </script>
 </body>
+
 </html>

@@ -1,10 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <!--
+        index.html
+        Index html file for B3rry client
+        Copyright (C) 2022  Aiden Bohlander
+
+        This program is free software: you can redistribute it and/or modify
+        it under the terms of the GNU General Public License as published by
+        the Free Software Foundation, either version 3 of the License, or
+        (at your option) any later version.
+
+        This program is distributed in the hope that it will be useful,
+        but WITHOUT ANY WARRANTY; without even the implied warranty of
+        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        GNU General Public License for more details.
+
+        You should have received a copy of the GNU General Public License
+        along with this program.  If not, see <https://www.gnu.org/licenses/>.
+    -->
+    <meta charset="UTF-8">
+    <title>B3rry Client</title>
+    <style>
+        * {
+            font-family: sans-serif;
+        }
+        h1 {
+            color: #bc1142ff;
+            text-align: center;
+        }
+        button {
+            font-size: larger;
+            background-color: #bc1142ff;
+            color: white;
+            padding: 3vmin;
+        }
+        #menu {
+            align-items: center;
+        }
+        button, a {
+            text-decoration: none;
+            align-self: center;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #credit {
+            position: absolute;
+            bottom: 1%;
+            color: #bc1142ff;
+        }
+    </style>
 </head>
 <body>
-$END$
+    <h1>B3rry Client Menu</h1>
+    <div id="menu">
+        <a href="/client"><button>Go to Client</button></a>
+        <br>
+        <a href="/about"><button>About</button></a>
+    </div>
+    <span id="credit">Copyright (c) 2022 Aiden Bohlander</span>
 </body>
 </html>

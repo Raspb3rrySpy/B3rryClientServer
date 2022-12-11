@@ -16,11 +16,11 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
-# Import necessary libraries
-import base64
 
+# Import necessary libraries
 import cv2
-from flask import Flask, Response, render_template
+import json
+from flask import Flask, Response, render_template, request
 
 # Initialize the Flask app
 app = Flask(__name__)
@@ -34,7 +34,7 @@ def get_frames():
         if not success:
             break
         else:
-            ret, buffer = cv2.imencode('.jpg', frame)
+            _, buffer = cv2.imencode('.jpg', frame)
             frame = buffer.tobytes()
             yield (b'--frame\r\n'
                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
@@ -45,9 +45,22 @@ def stream():
     return Response(get_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
-@app.route('/')
+@app.route("/")
 def index():
     return render_template("index.html")
 
 
-app.run(port=5000)
+@app.route('/client')
+def client():
+    return render_template("client.html")
+
+
+@app.route("/joystick")
+def joystick():
+    data = request.args.get("data")
+    if data:
+        print(data)
+    return ""
+
+
+app.run(host="192.168.42.6", port=5000)
