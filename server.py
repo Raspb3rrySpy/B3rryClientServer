@@ -71,4 +71,4 @@ def pantilt():
     return ""
 
 
-app.run(host="192.168.42.6", port=8080)
+app.run(port=8080)
