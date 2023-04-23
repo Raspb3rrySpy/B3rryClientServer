@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <script>
+        function $(id){
+            return document.getElementById(id)
+        }
+
+        document.onload = function(){
+            test = new WebSocket("ws://localhost:8000/");
+
+            test.onmessage = async function (event) {
+		        var text = await event.data.text();
+                $("body").style.backgroundImage = text;
+            }
+        }
+
+        test = new WebSocket("ws://localhost:8000/");
+
+        test.onmessage = async function (event) {
+		    var text = await event.data.text();
+            $("stream").style.backgroundImage = text;
+            console.log("Updated FPV");
+        }
+    </script>
+    <style>
+        #stream {
+            background-image: none;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center, center;
+            height: 500px;
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div id="stream"></div>
+</body>
+</html>

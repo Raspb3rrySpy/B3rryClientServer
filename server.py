@@ -47,7 +47,7 @@ def stream():
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("client.html")
 
 
 @app.route('/client')
@@ -71,4 +71,4 @@ def pantilt():
     return ""
 
 
-app.run(port=8080)
+app.run(host="192.168.42.13", port=8080)
