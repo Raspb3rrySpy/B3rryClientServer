@@ -10,36 +10,30 @@
             return document.getElementById(id)
         }
 
-        document.onload = function(){
-            test = new WebSocket("ws://localhost:8000/");
-
-            test.onmessage = async function (event) {
-		        var text = await event.data.text();
-                $("body").style.backgroundImage = text;
-            }
-        }
-
         test = new WebSocket("ws://localhost:8000/");
 
         test.onmessage = async function (event) {
 		    var text = await event.data.text();
-            $("stream").style.backgroundImage = text;
-            console.log("Updated FPV");
+            var data = text.split(":time:");
+            var time = data[0];
+            var image = data[1];
+            $("stream").src = image;
+            time = Date.now() - time;
+            $("ms").innerText = Math.round(time);
         }
     </script>
     <style>
-        #stream {
-            background-image: none;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center, center;
-            height: 500px;
-            width: 500px;
+        *  {
+            font-family: sans-serif;
+        }
+        .bgimg {
+            height: 360px;
+            width: 640px;
         }
     </style>
 </head>
 <body>
-    <div id="stream"></div>
+    <img src="" id="stream" class="bgimg">
+    <span><span id="ms"></span>&MediumSpace;ms</span>
 </body>
 </html>

@@ -16,10 +16,11 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
-
+import time
 import cv2
 import asyncio
 import websockets
+import base64
 
 
 async def handle_connection(websocket, path):
@@ -44,9 +45,9 @@ def get_frames():
         if not success:
             break
         else:
-            _, buffer = cv2.imencode('.jpg', frame)
-            frame = buffer.tobytes()
-            yield b'data:image/jpeg;base64,\r\n\r\n' + frame + b'\r\n'
+            _, buffer = cv2.imencode('.png', frame)
+            frame = base64.b64encode(buffer)
+            yield bytes(str(time.time() * 1000), "ascii") + b':time:' + b'data:image/png;base64,' + frame
 
 
 # Start video capture
