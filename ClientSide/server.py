@@ -20,12 +20,18 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 # Import necessary libraries
 import cv2
 import json
+import logging
 from flask import Flask, Response, render_template, request
 
+# Configure the server's log
+logging.basicConfig(filename="clientserver.log",
+                    format="%(asctime)s - %(name)s - %(process)d - %(levelname)s - %(message)s",
+                    datefmt='%d-%b-%y %H:%M:%S', level=logging.NOTSET)
 # Initialize the Flask app
 app = Flask(__name__)
 # Start video capture
 camera = cv2.VideoCapture(0)
+logging.debug("Started video...")
 
 
 def get_frames():
@@ -71,4 +77,8 @@ def pantilt():
     return ""
 
 
-app.run(host="192.168.42.5", port=8080)
+host = "192.168.42.5"
+port = 8080
+
+logging.debug(f"Preparing to run on {host}:{port}...")
+app.run(host=host, port=port)

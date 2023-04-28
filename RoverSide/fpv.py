@@ -16,6 +16,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
+import sys
 import time
 import cv2
 import asyncio
@@ -23,11 +24,10 @@ import websockets
 import base64
 
 
-async def handle_connection(websocket, path):
+async def handle_connection(websocket):
     """
     Websocket connection handler
     :param websocket: Conected websocket
-    :param path: Path of connected websocket
     :return: None
     """
     for frame in get_frames():
@@ -50,11 +50,17 @@ def get_frames():
             yield bytes(str(time.time() * 1000), "ascii") + b':time:' + b'data:image/png;base64,' + frame
 
 
-# Start video capture
-camera = cv2.VideoCapture(0)
-# Start the server
-start_server = websockets.serve(handle_connection, "localhost", 8000)
-
-# Do async stuff
-asyncio.get_event_loop().run_until_complete(start_server)
-asyncio.get_event_loop().run_forever()
+try:
+    # Start video capture
+    camera = cv2.VideoCapture(0)
+    address = "localhost"
+    port = 8000
+    # Start the server
+    start_server = websockets.serve(handle_connection, address, port)
+    # Do async stuff
+    asyncio.get_event_loop().run_until_complete(start_server)
+    print("Started server on " + "ws://" + str(address) + ":" + str(port) + "/")
+    asyncio.get_event_loop().run_forever()
+except KeyboardInterrupt:
+    print("KeyboardInterrupt: Exiting...")
+    sys.exit(0)
