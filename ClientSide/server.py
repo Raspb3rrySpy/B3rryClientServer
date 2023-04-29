@@ -21,17 +21,13 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 import cv2
 import json
 import logging
+import motorfrontend
 from flask import Flask, Response, render_template, request
 
-# Configure the server's log
-logging.basicConfig(filename="clientserver.log",
-                    format="%(asctime)s - %(name)s - %(process)d - %(levelname)s - %(message)s",
-                    datefmt='%d-%b-%y %H:%M:%S', level=logging.NOTSET)
-# Initialize the Flask app
+host = "192.168.42.5"
+port = 8080
+# Initialize the Flask app:
 app = Flask(__name__)
-# Start video capture
-camera = cv2.VideoCapture(0)
-logging.debug("Started video...")
 
 
 def get_frames():
@@ -65,7 +61,11 @@ def client():
 def joystick():
     data = json.loads(request.args.get("data"))
     if data:
+        # Package data:
+        data = control_handler.parse_joystick_data(data)
+        data = json.dumps(data)
         print(data)
+        control_handler.send_motor_data(bytes(data, "utf-8"))
     return ""
 
 
@@ -77,8 +77,16 @@ def pantilt():
     return ""
 
 
-host = "192.168.42.5"
-port = 8080
-
+# Configure the server's log:
+logging.basicConfig(filename="b3rry.log",
+                    format="%(asctime)s - %(name)s - %(process)d - %(levelname)s - %(message)s",
+                    datefmt='%d-%b-%y %H:%M:%S', level=logging.NOTSET)
+# Start a video capture:
+camera = cv2.VideoCapture(0)
+logging.debug("Started video...")
+# Create a control handler:
+control_handler = motorfrontend.MotorHandler("localhost", 32000)
+control_handler.connect()
+# Run the app:
 logging.debug(f"Preparing to run on {host}:{port}...")
 app.run(host=host, port=port)

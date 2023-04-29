@@ -5,5 +5,5 @@ def handler(data):
     print(str(data))
 
 
-pipe = cmdpipe.Reciever("localhost", 8080)
+pipe = cmdpipe.Reciever("localhost", 32000)
 pipe.listen(handler)

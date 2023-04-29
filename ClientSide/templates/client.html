@@ -233,7 +233,7 @@
         }
         var leftjoy = nipplejs.create(leftoptions);
         leftjoy.on("start move", function(event, data){
-            data = JSON.stringify(leftjoy.get(0).frontPosition);
+            data = JSON.stringify({x: data.position.x - 120, y: data.position.y - 370});
             if (!data) return;
             var xhr = new XMLHttpRequest();
             xhr.open("GET", "/joystick?data="+data);
