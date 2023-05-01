@@ -22,6 +22,7 @@ import cv2
 import asyncio
 import websockets
 import base64
+import logging
 
 
 async def handle_connection(websocket):
@@ -50,6 +51,10 @@ def get_frames():
             yield bytes(str(time.time() * 1000), "ascii") + b':time:' + b'data:image/png;base64,' + frame
 
 
+logging.basicConfig(filename="b3rry.log",
+                    format="%(asctime)s - %(name)s - %(process)d - %(levelname)s - %(message)s",
+                    datefmt='%d-%b-%y %H:%M:%S', level=logging.NOTSET)
+
 try:
     # Start video capture
     camera = cv2.VideoCapture(0)
@@ -59,8 +64,8 @@ try:
     start_server = websockets.serve(handle_connection, address, port)
     # Do async stuff
     asyncio.get_event_loop().run_until_complete(start_server)
-    print("Started server on " + "ws://" + str(address) + ":" + str(port) + "/")
+    logging.info("Started server on " + "ws://" + str(address) + ":" + str(port) + "/")
     asyncio.get_event_loop().run_forever()
 except KeyboardInterrupt:
-    print("KeyboardInterrupt: Exiting...")
+    logging.info("KeyboardInterrupt: Exiting...")
     sys.exit(0)

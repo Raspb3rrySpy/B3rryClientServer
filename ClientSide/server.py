@@ -30,23 +30,6 @@ port = 8080
 app = Flask(__name__)
 
 
-def get_frames():
-    while True:
-        success, frame = camera.read()  # read the camera frame
-        if not success:
-            break
-        else:
-            _, buffer = cv2.imencode('.jpg', frame)
-            frame = buffer.tobytes()
-            yield (b'--frame\r\n'
-                   b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
-
-
-@app.route('/stream')
-def stream():
-    return Response(get_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
-
-
 @app.route("/")
 def index():
     return render_template("client.html")
@@ -86,7 +69,7 @@ camera = cv2.VideoCapture(0)
 logging.debug("Started video...")
 # Create a control handler:
 control_handler = motorfrontend.MotorHandler("localhost", 32000)
-control_handler.connect()
+#control_handler.connect()
 # Run the app:
 logging.debug(f"Preparing to run on {host}:{port}...")
 app.run(host=host, port=port)

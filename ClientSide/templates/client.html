@@ -26,12 +26,14 @@
             font-family: sans-serif;
         }
         body {
+            margin: 0;
             overflow: hidden;
-            background-image: url("{{ url_for('stream') }}");
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center, center;
+        }
+        .bgimg {
+            display: block;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
         }
         #leftjoy {
             position: absolute;
@@ -197,6 +199,7 @@
     </script>
 </head>
 <body>
+    <img src="" id="stream" class="bgimg">
     <div id="fireenable" class="center">
         <label class="switch">
             <input id="fireinput" type="checkbox">
@@ -272,6 +275,19 @@
             xhr.open("GET", "/pantilt?data="+data);
             xhr.send();
         });
+
+        // Start recieving FPV:
+        test = new WebSocket("ws://localhost:8000/");
+
+        test.onmessage = async function (event) {
+		    var text = await event.data.text();
+            var data = text.split(":time:");
+            var time = data[0];
+            var image = data[1];
+            $("stream").src = image;
+            time = Date.now() - time;
+            $("ms").innerText = Math.round(time);
+        }
     </script>
 </body>
 
