@@ -64,12 +64,9 @@ def pantilt():
 logging.basicConfig(filename="b3rry.log",
                     format="%(asctime)s - %(name)s - %(process)d - %(levelname)s - %(message)s",
                     datefmt='%d-%b-%y %H:%M:%S', level=logging.NOTSET)
-# Start a video capture:
-camera = cv2.VideoCapture(0)
-logging.debug("Started video...")
 # Create a control handler:
 control_handler = motorfrontend.MotorHandler("localhost", 32000)
-#control_handler.connect()
+control_handler.connect()
 # Run the app:
 logging.debug(f"Preparing to run on {host}:{port}...")
 app.run(host=host, port=port)

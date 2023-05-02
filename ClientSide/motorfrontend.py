@@ -53,6 +53,9 @@ class MotorHandler:
         self.last_data_sent = data
         self.command_pipe.send(data)
 
+    def toggle_turbo(self):
+        pass
+
 
 logging.basicConfig(filename="b3rry.log",
                     format="%(asctime)s - %(name)s - %(process)d - %(levelname)s - %(message)s",

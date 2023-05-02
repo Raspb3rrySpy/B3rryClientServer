@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!--
         client.html
         Client html file for B3rry client
-        Copyright (C) 2022  Aiden Bohlander
+        Copyright (C) 2023  Aiden Bohlander
 
         This program is free software: you can redistribute it and/or modify
         it under the terms of the GNU General Public License as published by
@@ -42,44 +42,8 @@
             height: 500px;
             width: 500px;
         }
-        #rightjoy {
-            position: absolute;
-            top: 200px;
-            right: 0;
-            height: 500px;
-            width: 500px;
-        }
         img {
             width: 100%;
-        }
-        #fireselect {
-            position: absolute;
-            top: 360px;
-            left: 302px;
-            height: 96px;
-            width: 192px;
-        }
-        #drop {
-            font-size: xx-large;
-            text-align: center;
-            height: 98%;
-            width: 48%;
-            color: #8080808f;
-            background-color: #80808080;
-            margin-right: 2%;
-            border-radius: 50%;
-        }
-        #fire {
-            font-size: xx-large;
-            text-align: center;
-            position: absolute;
-            height: 98%;
-            width: 48%;
-            left: 50%;
-            top: 0;
-            color: #8080808f;
-            background-color: #80808080;
-            border-radius: 50%;
         }
         .icon svg, .icon img {
             height: 1em;
@@ -95,6 +59,10 @@
             border-radius: 50%;
             color: #8080808f;
             background-color: #80808080;
+        }
+        .button:hover {
+            color: #80808080;
+            background-color: #8080708f;
         }
         #fullscreen {
             position: absolute;
@@ -116,13 +84,19 @@
             right: 20px;
             font-size: 50px;
         }
+        #swipezone {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            right: 0;
+            top: 0;
+        }
         .switch {
             position: relative;
             display: inline-block;
             width: 60px;
             height: 34px;
         }
-
         .switch input { 
             opacity: 0;
             width: 0;
@@ -140,7 +114,6 @@
             -webkit-transition: .4s;
             transition: .4s;
         }
-
         .slider:before {
             content: "";
             border-radius: 50%;
@@ -153,27 +126,30 @@
             -webkit-transition: .4s;
             transition: .4s;
         }
-
         input:checked + .slider {
             background-color: #80808070;
         }
-
         input:focus + .slider {
             box-shadow: 0 0 1px #80808070;
         }
-
         input:checked + .slider:before {
             -webkit-transform: translateX(26px);
             -ms-transform: translateX(26px);
             transform: translateX(26px);
         }
-        #fireenable {
-            position: absolute;
-            top: 20;
-            left: 20;
-        }
     </style>
     <script src="../static/nipplejs.min.js"></script>
+</head>
+<body>
+    <img src="" id="stream" class="bgimg">
+    <div id="fullscreen" class="button center">
+        <div class="icon baseline" onclick="toggleFullScreen();"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M344 0H488c13.3 0 24 10.7 24 24V168c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-39-39-87 87c-9.4 9.4-24.6 9.4-33.9 0l-32-32c-9.4-9.4-9.4-24.6 0-33.9l87-87L327 41c-6.9-6.9-8.9-17.2-5.2-26.2S334.3 0 344 0zM184 496H40c-13.3 0-24-10.7-24-24V328c0-9.7 5.8-18.5 14.8-22.2s19.3-1.7 26.2 5.2l39 39 87-87c9.4-9.4 24.6-9.4 33.9 0l32 32c9.4 9.4 9.4 24.6 0 33.9l-87 87 39 39c6.9 6.9 8.9 17.2 5.2 26.2s-12.5 14.8-22.2 14.8z"/></svg></div>
+    </div>
+    <div id="turbo" class="button center" onclick="get('/turbo')">
+        <div class="icon baseline"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M512 256c0 141.4-114.6 256-256 256S0 397.4 0 256S114.6 0 256 0S512 114.6 512 256zM288 96c0-17.7-14.3-32-32-32s-32 14.3-32 32s14.3 32 32 32s32-14.3 32-32zM256 416c35.3 0 64-28.7 64-64c0-17.4-6.9-33.1-18.1-44.6L366 161.7c5.3-12.1-.2-26.3-12.3-31.6s-26.3 .2-31.6 12.3L257.9 288c-.6 0-1.3 0-1.9 0c-35.3 0-64 28.7-64 64s28.7 64 64 64zM176 144c0-17.7-14.3-32-32-32s-32 14.3-32 32s14.3 32 32 32s32-14.3 32-32zM96 288c17.7 0 32-14.3 32-32s-14.3-32-32-32s-32 14.3-32 32s14.3 32 32 32zm352-32c0-17.7-14.3-32-32-32s-32 14.3-32 32s14.3 32 32 32s32-14.3 32-32z"/></svg></div>
+    </div>
+    <div id="leftjoy"></div>
+    <div id="swipezone"></div>
     <script>
         function $(id){
             return document.getElementById(id)
@@ -192,37 +168,6 @@
             xhr.open("GET", url);
             xhr.send();
         } 
-
-        function firecontrol(){
-            return document.getElementById("fireinput").checked
-        }
-    </script>
-</head>
-<body>
-    <img src="" id="stream" class="bgimg">
-    <div id="fireenable" class="center">
-        <label class="switch">
-            <input id="fireinput" type="checkbox">
-            <span class="slider"></span>
-        </label>
-    </div>
-    <div id="fullscreen" class="button center">
-        <div class="icon baseline" onclick="toggleFullScreen();"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M344 0H488c13.3 0 24 10.7 24 24V168c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-39-39-87 87c-9.4 9.4-24.6 9.4-33.9 0l-32-32c-9.4-9.4-9.4-24.6 0-33.9l87-87L327 41c-6.9-6.9-8.9-17.2-5.2-26.2S334.3 0 344 0zM184 496H40c-13.3 0-24-10.7-24-24V328c0-9.7 5.8-18.5 14.8-22.2s19.3-1.7 26.2 5.2l39 39 87-87c9.4-9.4 24.6-9.4 33.9 0l32 32c9.4 9.4 9.4 24.6 0 33.9l-87 87 39 39c6.9 6.9 8.9 17.2 5.2 26.2s-12.5 14.8-22.2 14.8z"/></svg></div>
-    </div>
-    <div id="turbo" class="button center" onclick="get('/turbo')">
-        <div class="icon baseline"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M512 256c0 141.4-114.6 256-256 256S0 397.4 0 256S114.6 0 256 0S512 114.6 512 256zM288 96c0-17.7-14.3-32-32-32s-32 14.3-32 32s14.3 32 32 32s32-14.3 32-32zM256 416c35.3 0 64-28.7 64-64c0-17.4-6.9-33.1-18.1-44.6L366 161.7c5.3-12.1-.2-26.3-12.3-31.6s-26.3 .2-31.6 12.3L257.9 288c-.6 0-1.3 0-1.9 0c-35.3 0-64 28.7-64 64s28.7 64 64 64zM176 144c0-17.7-14.3-32-32-32s-32 14.3-32 32s14.3 32 32 32s32-14.3 32-32zM96 288c17.7 0 32-14.3 32-32s-14.3-32-32-32s-32 14.3-32 32s14.3 32 32 32zm352-32c0-17.7-14.3-32-32-32s-32 14.3-32 32s14.3 32 32 32s32-14.3 32-32z"/></svg></div>
-    </div>
-    <div id="leftjoy"></div>
-    <div id="rightjoy"></div>
-    <div id="fireselect">
-        <div id="drop" class="center" onclick="if(firecontrol()) get('/drop');">
-            <div class="icon baseline"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M246.6 470.6c-12.5 12.5-32.8 12.5-45.3 0l-160-160c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L224 402.7 361.4 265.4c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3l-160 160zm160-352l-160 160c-12.5 12.5-32.8 12.5-45.3 0l-160-160c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L224 210.7 361.4 73.4c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3z"/></svg></div>
-        </div>
-        <div id="fire" class="center" onclick="if(firecontrol()) get('/fire');">
-            <div class="icon baseline"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M349.4 44.6c5.9-13.7 1.5-29.7-10.6-38.5s-28.6-8-39.9 1.8l-256 224c-10 8.8-13.6 22.9-8.9 35.3S50.7 288 64 288H175.5L98.6 467.4c-5.9 13.7-1.5 29.7 10.6 38.5s28.6 8 39.9-1.8l256-224c10-8.8 13.6-22.9 8.9-35.3s-16.6-20.7-30-20.7H272.5L349.4 44.6z"/></svg></div>
-        </div>
-    </div>
-    <script>
         var leftoptions = {
             zone: $("leftjoy"),
             color: "gray",
@@ -236,7 +181,7 @@
         }
         var leftjoy = nipplejs.create(leftoptions);
         leftjoy.on("start move", function(event, data){
-            data = JSON.stringify({x: data.position.x - 120, y: data.position.y - 370});
+            data = JSON.stringify({x: -(data.position.x - 120), y: data.position.y - 370});
             if (!data) return;
             var xhr = new XMLHttpRequest();
             xhr.open("GET", "/joystick?data="+data);
@@ -247,32 +192,6 @@
             if (!data) return;
             var xhr = new XMLHttpRequest();
             xhr.open("GET", "/joystick?data="+data);
-            xhr.send();
-        });
-        var rightoptions = {
-            zone: $("rightjoy"),
-            color: "gray",
-            mode: "static",
-            size: 200,
-            restOpacity: 0.9,
-            position: {
-                top: "170px",
-                right: "120px"
-            }
-        }
-        var rightjoy = nipplejs.create(rightoptions);
-        rightjoy.on("start move", function(event, data){
-            data = JSON.stringify(leftjoy.get(0).frontPosition);
-            if (!data) return;
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", "/pantilt?data="+data);
-            xhr.send();
-        });
-        rightjoy.on("end", function(event, data){
-            data = JSON.stringify({x: 0, y: 0});
-            if (!data) return;
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", "/pantilt?data="+data);
             xhr.send();
         });
 
@@ -288,6 +207,35 @@
             time = Date.now() - time;
             $("ms").innerText = Math.round(time);
         }
+
+        var isSwipe = false;
+        var lastX = 0;
+        var lastY = 0;
+
+        
+        function swipeMove(event){
+            console.log("swipeMove...")
+            if(isSwipe == false){
+                lastX = event.touches[0].screenX;
+                lastY = event.touches[0].screenY;
+                isSwipe = true;
+                return
+            }
+            console.log(event)
+            var x = event.touches[0].screenX - lastX;
+            // Calibrate for HTML/JS's wierd cords:
+            var y = -(event.touches[0].screenY - lastY);
+            lastX = event.touches[0].screenX;
+            lastY = event.touches[0].screenY;
+            get("/pantilt?data="+JSON.stringify({"x": x, "y": y}));
+            console.log(x, y);
+        }
+        function swipeEnd(event){
+            isSwipe = false;
+        }
+        $("swipezone").addEventListener("touchmove", swipeMove);
+        $("swipezone").addEventListener("touchend", swipeEnd);
+        $("swipezone").addEventListener("touchcancel", swipeEnd);
     </script>
 </body>
 
