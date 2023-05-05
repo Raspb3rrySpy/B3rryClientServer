@@ -21,9 +21,12 @@ import logging
 
 
 class MotorHandler:
-    def __init__(self, hostname, port):
+    def __init__(self, hostname, port, logname="motorhandler.log"):
         self.command_pipe = cmdpipe.Transmitter(hostname, port)
         self.last_data_sent = None
+        logging.basicConfig(filename=logname,
+                            format="%(asctime)s - %(name)s - %(process)d - %(levelname)s - %(message)s",
+                            datefmt='%d-%b-%y %H:%M:%S', level=logging.NOTSET)
 
     def parse_joystick_data(self, data: dict, scale=1):
         """
@@ -55,8 +58,3 @@ class MotorHandler:
 
     def toggle_turbo(self):
         pass
-
-
-logging.basicConfig(filename="b3rry.log",
-                    format="%(asctime)s - %(name)s - %(process)d - %(levelname)s - %(message)s",
-                    datefmt='%d-%b-%y %H:%M:%S', level=logging.NOTSET)

@@ -214,12 +214,15 @@
 
         
         function swipeMove(event){
-            console.log("swipeMove...")
             if(isSwipe == false){
                 lastX = event.touches[0].screenX;
                 lastY = event.touches[0].screenY;
                 isSwipe = true;
                 return
+            }
+            console.log(document.elementFromPoint(event.touches[0].screenX, event.touches[0].screenY))
+            if(document.elementFromPoint(event.touches[0].screenX, event.touches[0].screenY)){
+
             }
             console.log(event)
             var x = event.touches[0].screenX - lastX;

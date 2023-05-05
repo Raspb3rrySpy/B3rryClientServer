@@ -18,55 +18,51 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
 # Import necessary libraries
-import cv2
 import json
 import logging
-import motorfrontend
 from flask import Flask, Response, render_template, request
 
-host = "192.168.42.5"
-port = 8080
-# Initialize the Flask app:
-app = Flask(__name__)
 
+class Server:
+    def __init__(self, host, port, motor_handler, logname="server.log"):
+        # Initialize Flask:
+        self.app = Flask(__name__)
+        self.host = host
+        self.port = port
+        self.motor_handler = motor_handler
+        # Configure the server's log:
+        logging.basicConfig(filename=logname,
+                            format="%(asctime)s - %(name)s - %(process)d - %(levelname)s - %(message)s",
+                            datefmt='%d-%b-%y %H:%M:%S', level=logging.NOTSET)
+        # Set up routes:
+        self.app.route("/")(self.index)
+        self.app.route("/client")(self.client)
+        self.app.route("/joystick")(self.joystick)
+        self.app.route("/pantilt")(self.pantilt)
 
-@app.route("/")
-def index():
-    return render_template("client.html")
+    def index(self):
+        return render_template("client.html")
 
+    def client(self):
+        return render_template("client.html")
 
-@app.route('/client')
-def client():
-    return render_template("client.html")
+    def joystick(self):
+        data = json.loads(request.args.get("data"))
+        if data:
+            # Package data:
+            data = self.motor_handler.parse_joystick_data(data)
+            data = json.dumps(data)
+            self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+        return ""
 
+    def pantilt(self):
+        data = json.loads(request.args.get("data"))
+        if data:
+            pass
+        return ""
 
-@app.route("/joystick")
-def joystick():
-    data = json.loads(request.args.get("data"))
-    if data:
-        # Package data:
-        data = control_handler.parse_joystick_data(data)
-        data = json.dumps(data)
-        print(data)
-        control_handler.send_motor_data(bytes(data, "utf-8"))
-    return ""
-
-
-@app.route("/pantilt")
-def pantilt():
-    data = json.loads(request.args.get("data"))
-    if data:
-        print(data)
-    return ""
-
-
-# Configure the server's log:
-logging.basicConfig(filename="b3rry.log",
-                    format="%(asctime)s - %(name)s - %(process)d - %(levelname)s - %(message)s",
-                    datefmt='%d-%b-%y %H:%M:%S', level=logging.NOTSET)
-# Create a control handler:
-control_handler = motorfrontend.MotorHandler("localhost", 32000)
-control_handler.connect()
-# Run the app:
-logging.debug(f"Preparing to run on {host}:{port}...")
-app.run(host=host, port=port)
+    def start(self):
+        self.motor_handler.connect()
+        # Run the app:
+        logging.info(f"Preparing to run on {self.host}:{self.port}...")
+        app.run(host=self.host, port=self.port)
