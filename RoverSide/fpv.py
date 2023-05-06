@@ -25,47 +25,42 @@ import base64
 import logging
 
 
-async def handle_connection(websocket):
-    """
-    Websocket connection handler
-    :param websocket: Conected websocket
-    :return: None
-    """
-    for frame in get_frames():
-        await websocket.send(frame)
+class FPVServer:
+    def __init__(self, host, port):
+        self.host = host
+        self.port = port
+        self.camera = None
 
+    async def handle_connection(self, websocket):
+        """
+        Websocket connection handler
+        :param websocket: Conected websocket
+        :return: None
+        """
+        for frame in get_frames():
+            await websocket.send(frame)
 
-def get_frames():
-    """
-    Generator function that uses cv2 to stream frames to a websocket,
-    yielding byte-encoded frames.
-    :return: None
-    """
-    while True:
-        success, frame = camera.read()  # read the camera frame
-        if not success:
-            break
-        else:
-            _, buffer = cv2.imencode('.png', frame)
-            frame = base64.b64encode(buffer)
-            yield bytes(str(time.time() * 1000), "ascii") + b':time:' + b'data:image/png;base64,' + frame
+    def get_frames(self):
+        """
+        Generator function that uses cv2 to stream frames to a websocket,
+        yielding byte-encoded frames.
+        :return: None
+        """
+        while True:
+            success, frame = camera.read()  # read the camera frame
+            if not success:
+                break
+            else:
+                _, buffer = cv2.imencode('.png', frame)
+                frame = base64.b64encode(buffer)
+                yield bytes(str(time.time() * 1000), "ascii") + b':time:' + b'data:image/png;base64,' + frame
 
-
-logging.basicConfig(filename="b3rry.log",
-                    format="%(asctime)s - %(name)s - %(process)d - %(levelname)s - %(message)s",
-                    datefmt='%d-%b-%y %H:%M:%S', level=logging.NOTSET)
-
-try:
-    # Start video capture
-    camera = cv2.VideoCapture(0)
-    address = "localhost"
-    port = 8000
-    # Start the server
-    start_server = websockets.serve(handle_connection, address, port)
-    # Do async stuff
-    asyncio.get_event_loop().run_until_complete(start_server)
-    logging.info("Started server on " + "ws://" + str(address) + ":" + str(port) + "/")
-    asyncio.get_event_loop().run_forever()
-except KeyboardInterrupt:
-    logging.info("KeyboardInterrupt: Exiting...")
-    sys.exit(0)
+    def start(self):
+        # Start video capture
+        self.camera = cv2.VideoCapture(0)
+        # Start the server
+        start_server = websockets.serve(self.handle_connection, self.host, self.port)
+        # Do async stuff
+        asyncio.get_event_loop().run_until_complete(start_server)
+        logging.info("Started server on " + "ws://" + str(address) + ":" + str(port) + "/")
+        asyncio.get_event_loop().run_forever()

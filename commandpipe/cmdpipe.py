@@ -17,7 +17,6 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 import socket
-import logging
 
 
 class NotConnected(Exception):
@@ -89,8 +88,3 @@ class Reciever:
                     if not data:
                         break
                     self.callback(data)
-
-
-logging.basicConfig(filename="b3rry.log",
-                    format="%(asctime)s - %(name)s - %(process)d - %(levelname)s - %(message)s",
-                    datefmt='%d-%b-%y %H:%M:%S', level=logging.NOTSET)

@@ -24,21 +24,19 @@ from flask import Flask, Response, render_template, request
 
 
 class Server:
-    def __init__(self, host, port, motor_handler, logname="server.log"):
+    def __init__(self, host, port, motor_handler):
         # Initialize Flask:
         self.app = Flask(__name__)
         self.host = host
         self.port = port
         self.motor_handler = motor_handler
-        # Configure the server's log:
-        logging.basicConfig(filename=logname,
-                            format="%(asctime)s - %(name)s - %(process)d - %(levelname)s - %(message)s",
-                            datefmt='%d-%b-%y %H:%M:%S', level=logging.NOTSET)
+
         # Set up routes:
         self.app.route("/")(self.index)
         self.app.route("/client")(self.client)
         self.app.route("/joystick")(self.joystick)
         self.app.route("/pantilt")(self.pantilt)
+        self.app.route("/turbo")(self.turbo)
 
     def index(self):
         return render_template("client.html")
@@ -61,8 +59,12 @@ class Server:
             pass
         return ""
 
+    def turbo(self):
+        self.motor_handler.toggle_turbo()
+        return ""
+
     def start(self):
-        self.motor_handler.connect()
+        #self.motor_handler.connect()
         # Run the app:
         logging.info(f"Preparing to run on {self.host}:{self.port}...")
-        app.run(host=self.host, port=self.port)
+        self.app.run(host=self.host, port=self.port)

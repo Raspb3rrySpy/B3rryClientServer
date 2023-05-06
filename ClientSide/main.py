@@ -1,6 +1,6 @@
 """
 main.py
-One .py file to rule them all...
+One .py file to rule them all... (Frontend)
 Copyright (C) 2022  Aiden Bohlander
 
 This program is free software: you can redistribute it and/or modify
@@ -16,6 +16,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
+import sys
 import threading
 import logging
 import server
@@ -25,10 +26,13 @@ import motorfrontend
 logging.basicConfig(filename="b3rry.log",
                     format="%(asctime)s - %(name)s - %(process)d - %(levelname)s - %(message)s",
                     datefmt='%d-%b-%y %H:%M:%S', level=logging.NOTSET)
+logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
+
+logging.info("Creating motor handler...")
+motor_handler = motorfrontend.MotorHandler("localhost", 32000)
 
 logging.info("Starting server...")
-motor_handler = motorfrontend.MotorHandler("localhost", 32000, "b3rry.log")
-client_server = server.Server("localhost", 8080, "b3rry.log")
+client_server = server.Server("localhost", 8080, motor_handler)
 server_thread = threading.Thread(target=client_server.start)
 server_thread.start()
-logging.info("Server started!")
+logging.info("Server thread started!")

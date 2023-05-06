@@ -1,6 +1,6 @@
 """
 motorbackend.py
-Backend motor handlers for B3rry client
+Backend motor server for B3rry client
 Copyright (C) 2023  Aiden Bohlander
 
 This program is free software: you can redistribute it and/or modify
@@ -21,26 +21,26 @@ import cmdpipe
 import logging
 import robohat.robohat as robohat
 
-logging.basicConfig(filename="b3rry.log",
-                    format="%(asctime)s - %(name)s - %(process)d - %(levelname)s - %(message)s",
-                    datefmt='%d-%b-%y %H:%M:%S', level=logging.NOTSET)
 
+class MotorServer:
+    def __init__(self, host, port):
+        self.motor_host = host
+        self.motor_port = port
+        self.reciever = None
 
-def handle_data(data):
-    if not data:
-        return
-    data = json.loads(data)
-    if not isinstance(data.get("left"), int) or not isinstance(data.get("right"), int):
-        logging.info(f"Invalid data: {data}")
-        return
-    robohat.setLeftSpeed(data.get("left"))
-    robohat.setRightSpeed(data.get("right"))
+    def handle_data(self, data):
+        if not data:
+            return
+        data = json.loads(data)
+        if not isinstance(data.get("left"), int) or not isinstance(data.get("right"), int):
+            logging.info(f"Invalid data: {data}")
+            return
+        robohat.setLeftSpeed(data.get("left"))
+        robohat.setRightSpeed(data.get("right"))
 
-
-motor_host = "localhost"
-motor_port = 10000
-logging.info(f"Initializing RoboHat...")
-robohat.init()
-logging.info(f"Preparing to start reciever on: {motor_host}:{motor_port}")
-reciever = cmdpipe.Reciever(motor_host, motor_port)
-reciever.listen(handle_data)
+    def start(self):
+        logging.info(f"Initializing RoboHat...")
+        robohat.init()
+        logging.info(f"Preparing to start reciever on: {self.motor_host}:{self.motor_port}")
+        self.reciever = cmdpipe.Reciever(self.motor_host, self.motor_port)
+        self.reciever.listen(self.handle_data)
