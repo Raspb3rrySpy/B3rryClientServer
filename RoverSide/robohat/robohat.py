@@ -220,7 +220,7 @@ def setLeftSpeed(speed):
         q.ChangeDutyCycle(0)
     else:
         p.ChangeDutyCycle(0)
-        q.ChangeDutyCycle(speed)
+        q.ChangeDutyCycle(-speed)
 
 
 # setRightSpeed(speed): set right motor speed -100 <= speed <= 100. negative = reverse
@@ -230,7 +230,7 @@ def setRightSpeed(speed):
         b.ChangeDutyCycle(0)
     else:
         a.ChangeDutyCycle(0)
-        b.ChangeDutyCycle(speed)
+        b.ChangeDutyCycle(-speed)
 
 
 # End of Motor Functions
