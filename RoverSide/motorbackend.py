@@ -32,7 +32,10 @@ class MotorServer:
         if not data:
             return
         logging.info(data)
-        data = json.loads(data)
+        try:
+            data = json.loads(data)
+        except json.decoder.JSONDecodeError as e:
+            logging.debug(f"{e}\ndata: {data}")
         logging.info(data)
         if not isinstance(data.get("left"), int) or not isinstance(data.get("right"), int):
             logging.info(f"Invalid data: {data}")

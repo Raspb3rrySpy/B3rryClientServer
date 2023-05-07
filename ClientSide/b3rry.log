@@ -11308,3 +11308,1425 @@ Traceback (most recent call last):
     self.socket.sendall(data)
 BrokenPipeError: [Errno 32] Broken pipe
 06-May-23 19:34:03 - werkzeug - 39067 - INFO - 127.0.0.1 - - [06/May/2023 19:34:03] "[35m[1mGET /joystick?data={%22x%22:8,%22y%22:87} HTTP/1.1[0m" 500 -
+06-May-23 19:37:56 - root - 39337 - INFO - Creating and connecting motor handler...
+06-May-23 19:37:56 - root - 39337 - INFO - Starting server...
+06-May-23 19:37:56 - root - 39337 - INFO - Preparing to run on localhost:8080...
+06-May-23 19:37:56 - root - 39337 - INFO - Server thread started!
+06-May-23 19:37:56 - werkzeug - 39337 - INFO -  * Running on http://localhost:8080/ (Press CTRL+C to quit)
+06-May-23 19:37:58 - root - 39337 - INFO - {'left': 63, 'right': 31}
+06-May-23 19:37:58 - root - 39337 - INFO - {'left': 63, 'right': 31}
+06-May-23 19:37:58 - root - 39337 - INFO - {'left': -24, 'right': -66}
+06-May-23 19:37:58 - root - 39337 - INFO - {'left': -2, 'right': -70}
+06-May-23 19:37:58 - root - 39337 - INFO - {'left': 10, 'right': -69}
+06-May-23 19:37:58 - root - 39337 - INFO - {'left': 62, 'right': 32}
+06-May-23 19:37:58 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:58] "GET /joystick?data={%22x%22:-31.821592060541633,%22y%22:-94.80182634703021} HTTP/1.1" 200 -
+06-May-23 19:37:58 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:58] "GET /joystick?data={%22x%22:-31.821592060541633,%22y%22:-94.80182634703021} HTTP/1.1" 200 -
+06-May-23 19:37:58 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:58] "GET /joystick?data={%22x%22:-41.45207700290436,%22y%22:91.0039851443072} HTTP/1.1" 200 -
+06-May-23 19:37:58 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:58] "GET /joystick?data={%22x%22:-67.71543229827597,%22y%22:73.58410309745989} HTTP/1.1" 200 -
+06-May-23 19:37:58 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:58] "GET /joystick?data={%22x%22:-80.3634139124024,%22y%22:59.51236597837368} HTTP/1.1" 200 -
+06-May-23 19:37:58 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:58] "GET /joystick?data={%22x%22:-30.622466115209875,%22y%22:-95.19592727119596} HTTP/1.1" 200 -
+06-May-23 19:37:58 - root - 39337 - INFO - {'left': 63, 'right': 31}
+06-May-23 19:37:58 - root - 39337 - INFO - {'left': 63, 'right': 31}
+06-May-23 19:37:58 - root - 39337 - INFO - {'left': 22, 'right': -66}
+06-May-23 19:37:58 - root - 39337 - INFO - {'left': 62, 'right': 32}
+06-May-23 19:37:58 - root - 39337 - INFO - {'left': 62, 'right': 32}
+06-May-23 19:37:58 - root - 39337 - INFO - {'left': 61, 'right': 34}
+06-May-23 19:37:58 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:58] "GET /joystick?data={%22x%22:-31.223894559949827,%22y%22:-95.00036004410265} HTTP/1.1" 200 -
+06-May-23 19:37:58 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:58] "GET /joystick?data={%22x%22:-31.223894559949827,%22y%22:-95.00036004410265} HTTP/1.1" 200 -
+06-May-23 19:37:58 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:58] "GET /joystick?data={%22x%22:-89.76972256584872,%22y%22:44.06128584654044} HTTP/1.1" 200 -
+06-May-23 19:37:58 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:58] "GET /joystick?data={%22x%22:-30.017348370036075,%22y%22:-95.38846259811453} HTTP/1.1" 200 -
+06-May-23 19:37:58 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:58] "GET /joystick?data={%22x%22:-30.017348370036075,%22y%22:-95.38846259811453} HTTP/1.1" 200 -
+06-May-23 19:37:58 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:58] "GET /joystick?data={%22x%22:-27.560884415262677,%22y%22:-96.12698710689176} HTTP/1.1" 200 -
+06-May-23 19:37:58 - root - 39337 - INFO - {'left': 62, 'right': 33}
+06-May-23 19:37:58 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:58 - root - 39337 - INFO - {'left': 62, 'right': 33}
+06-May-23 19:37:58 - root - 39337 - INFO - {'left': -11, 'right': -69}
+06-May-23 19:37:58 - root - 39337 - INFO - {'left': 62, 'right': 33}
+06-May-23 19:37:58 - root - 39337 - INFO - {'left': -3, 'right': 70}
+06-May-23 19:37:58 - root - 39337 - INFO - {'left': -62, 'right': 33}
+06-May-23 19:37:58 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:58] "[35m[1mGET /joystick?data={%22x%22:-29.408584883752326,%22y%22:-95.57790087219502} HTTP/1.1[0m" 500 -
+06-May-23 19:37:58 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:58] "GET /joystick?data={%22x%22:-28.796221137163627,%22y%22:-95.76417727010227} HTTP/1.1" 200 -
+06-May-23 19:37:58 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:58 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:58 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:58 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:58 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:58] "[35m[1mGET /joystick?data={%22x%22:-57.85974441956856,%22y%22:81.56132647095808} HTTP/1.1[0m" 500 -
+06-May-23 19:37:58 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:58] "[35m[1mGET /joystick?data={%22x%22:-28.796221137163627,%22y%22:-95.76417727010227} HTTP/1.1[0m" 500 -
+06-May-23 19:37:58 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:58] "[35m[1mGET /joystick?data={%22x%22:74.57612074416429,%22y%22:-66.62133453145344} HTTP/1.1[0m" 500 -
+06-May-23 19:37:58 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:58] "[35m[1mGET /joystick?data={%22x%22:95.97709683617099,%22y%22:28.078405989305338} HTTP/1.1[0m" 500 -
+06-May-23 19:37:58 - root - 39337 - INFO - {'left': 33, 'right': -62}
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': -67, 'right': -22}
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:-95.75081892040751,%22y%22:28.840608108556467} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:44.48076141837849,%22y%22:89.56261420727566} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': -35, 'right': 60}
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:96.77035728978883,%22y%22:-25.209084672129848} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 61, 'right': 35}
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 23, 'right': 66}
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:-25.682125156439923,%22y%22:-96.64589203607648} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:43.224644558986995,%22y%22:-90.1755515799556} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': -27, 'right': 65}
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:92.66569808224577,%22y%22:-37.590802052231766} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 61, 'right': 34}
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:-26.938012034259884,%22y%22:-96.3033930224791} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 39, 'right': -58}
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 61, 'right': 34}
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': -43, 'right': 55}
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 60, 'right': 35}
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 62, 'right': 33}
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:-98.22418366057121,%22y%22:18.76192272168214} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': -50, 'right': 49}
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:-26.938012034259884,%22y%22:-96.3033930224791} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:99.27337820337084,%22y%22:-12.033136751923735} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:-25.049222786273276,%22y%22:-96.81186103883988} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:-28.180304536483703,%22y%22:-95.94722735040881} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:99.99074588189764,%22y%22:1.3604183113183126} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 60, 'right': 36}
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 60, 'right': 37}
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 63, 'right': 31}
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:-23.77379479982693,%22y%22:-97.13293303929271} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': -55, 'right': 44}
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 59, 'right': 37}
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 59, 'right': 38}
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:-32.41551888112551,%22y%22:-94.600391836754} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:-23.131392703341618,%22y%22:-97.28791636993668} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:-21.693045781865635,%22y%22:-97.6187060183953} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 42, 'right': -56}
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:99.35731472121819,%22y%22:11.319187753050187} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:-20.906848974217695,%22y%22:-97.79010004069562} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:-99.1005398529681,%22y%22:13.382189688174492} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': -58, 'right': 39}
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:98.23385664224747,%22y%22:18.711210788999495} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 59, 'right': 38}
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:-20.260560403595235,%22y%22:-97.92604195071027} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 58, 'right': 39}
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:-18.834838231896754,%22y%22:-98.21022792346162} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 54, 'right': -44}
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 57, 'right': 40}
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 57, 'right': 41}
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:-99.47715903860114,%22y%22:-10.212484007765113} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:-17.532384420146684,%22y%22:-98.4510817439006} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:-15.561512699624444,%22y%22:-98.7817762671811} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': -59, 'right': 38}
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:97.64534754469962,%22y%22:21.57280934127084} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': -60, 'right': 36}
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:97.14272914031517,%22y%22:23.733734960417905} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 54, 'right': 45}
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:-8.869020797392722,%22y%22:-99.60592587841052} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 45, 'right': -54}
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 55, 'right': 43}
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 56, 'right': 42}
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 51, 'right': 48}
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 45, 'right': 53}
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 40, 'right': 58}
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:-99.63205578353481,%22y%22:8.57049942223955} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:-11.565696351670823,%22y%22:-99.32892160846683} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:-14.23704274196993,%22y%22:-98.981344777505} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:-2.1122047281835563,%22y%22:-99.97769046735493} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:8.061907962359399,%22y%22:-99.67449844371652} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:18.02067933172067,%22y%22:-98.36287468564194} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': -60, 'right': 35}
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:96.81923619323497,%22y%22:25.020701488139366} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 30, 'right': 63}
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 25, 'right': 66}
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 48, 'right': -51}
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 35, 'right': 61}
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': -54, 'right': -45}
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': -61, 'right': 35}
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:33.6336396998156,%22y%22:-94.17419115948377} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:40.8846265616927,%22y%22:-91.26032714663546} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:-99.93628543475495,%22y%22:3.5691530512411873} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:26.3754997767209,%22y%22:-96.45897061200787} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:8.420689790344014,%22y%22:99.64482918573748} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:96.52544002008509,%22y%22:26.131196469525776} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 26, 'right': 65}
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': -28, 'right': -64}
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 24, 'right': 66}
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 24, 'right': 66}
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 24, 'right': 66}
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "GET /joystick?data={%22x%22:41.814360552814264,%22y%22:-90.83809361473442} HTTP/1.1" 200 -
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 24, 'right': 66}
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:39.65766892953016,%22y%22:-91.80015955909761} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "GET /joystick?data={%22x%22:42.132110526045196,%22y%22:-90.69115316623288} HTTP/1.1" 200 -
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:-35.50911100836743,%22y%22:93.48316979753861} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:41.54211964144473,%22y%22:-90.96291714592212} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "GET /joystick?data={%22x%22:41.86081957456538,%22y%22:-90.81669331431135} HTTP/1.1" 200 -
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 51, 'right': -48}
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 23, 'right': 66}
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:-99.96831380888693,%22y%22:-2.5171877577777195} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 24, 'right': 66}
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:42.68419791440806,%22y%22:-90.43262270001708} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 24, 'right': 66}
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "GET /joystick?data={%22x%22:42.132110526045196,%22y%22:-90.69115316623288} HTTP/1.1" 200 -
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:42.132110526045196,%22y%22:-90.69115316623288} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 23, 'right': 66}
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:43.536804061881696,%22y%22:-90.02525585677233} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 24, 'right': 66}
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 23, 'right': 66}
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:43.24927434451638,%22y%22:-90.16374143009352} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:42.406554384075534,%22y%22:-90.56315004056808} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 23, 'right': 66}
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "GET /joystick?data={%22x%22:43.49624544805904,%22y%22:-90.04485899773624} HTTP/1.1" 200 -
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 22, 'right': 67}
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:44.403907602530836,%22y%22:-89.60074212653547} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': 59, 'right': -38}
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': -4, 'right': -70}
+06-May-23 19:37:59 - root - 39337 - INFO - {'left': -3, 'right': 50}
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - server - 39337 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 54, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 57, in send
+    self.socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:54,%22y%22:-47} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:-97.65749485507942,%22y%22:-21.517753103661562} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "[35m[1mGET /joystick?data={%22x%22:-66.5206042148501,%22y%22:74.66598432279096} HTTP/1.1[0m" 500 -
+06-May-23 19:37:59 - werkzeug - 39337 - INFO - 127.0.0.1 - - [06/May/2023 19:37:59] "GET / HTTP/1.1" 200 -
