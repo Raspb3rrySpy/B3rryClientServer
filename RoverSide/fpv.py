@@ -63,4 +63,3 @@ class FPVServer:
         # Do async stuff
         asyncio.get_event_loop().run_until_complete(start_server)
         logging.info("Started server on " + "ws://" + str(self.host) + ":" + str(self.port) + "/")
-        asyncio.get_event_loop().run_forever()
