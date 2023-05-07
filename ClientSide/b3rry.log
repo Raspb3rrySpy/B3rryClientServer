@@ -8,3 +8,872 @@
 06-May-23 15:23:51 - root - 29525 - INFO - Preparing to run on localhost:8080...
 06-May-23 15:23:51 - root - 29525 - INFO - Server started!
 06-May-23 15:23:51 - werkzeug - 29525 - INFO -  * Running on http://localhost:8080/ (Press CTRL+C to quit)
+06-May-23 17:06:37 - root - 35485 - INFO - Creating motor handler...
+06-May-23 17:06:37 - root - 35485 - INFO - Starting server...
+06-May-23 17:06:37 - root - 35485 - INFO - Preparing to run on localhost:8080...
+06-May-23 17:06:37 - root - 35485 - INFO - Server thread started!
+06-May-23 17:06:37 - werkzeug - 35485 - INFO -  * Running on http://localhost:8080/ (Press CTRL+C to quit)
+06-May-23 17:07:01 - werkzeug - 35485 - INFO - 127.0.0.1 - - [06/May/2023 17:07:01] "GET / HTTP/1.1" 200 -
+06-May-23 17:07:02 - werkzeug - 35485 - INFO - 127.0.0.1 - - [06/May/2023 17:07:02] "GET /static/nipplejs.min.js HTTP/1.1" 200 -
+06-May-23 17:07:02 - werkzeug - 35485 - INFO - 127.0.0.1 - - [06/May/2023 17:07:02] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+06-May-23 17:07:04 - server - 35485 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 53, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 56, in send
+    raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
+cmdpipe.NotConnected: You must run Transmitter.connect() before attempting to send data.
+06-May-23 17:07:04 - server - 35485 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 53, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 56, in send
+    raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
+cmdpipe.NotConnected: You must run Transmitter.connect() before attempting to send data.
+06-May-23 17:07:04 - werkzeug - 35485 - INFO - 127.0.0.1 - - [06/May/2023 17:07:04] "[35m[1mGET /joystick?data={%22x%22:0,%22y%22:0} HTTP/1.1[0m" 500 -
+06-May-23 17:07:04 - werkzeug - 35485 - INFO - 127.0.0.1 - - [06/May/2023 17:07:04] "[35m[1mGET /joystick?data={%22x%22:-7,%22y%22:3} HTTP/1.1[0m" 500 -
+06-May-23 17:07:04 - server - 35485 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 53, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 56, in send
+    raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
+cmdpipe.NotConnected: You must run Transmitter.connect() before attempting to send data.
+06-May-23 17:07:04 - werkzeug - 35485 - INFO - 127.0.0.1 - - [06/May/2023 17:07:04] "[35m[1mGET /joystick?data={%22x%22:-7,%22y%22:-9} HTTP/1.1[0m" 500 -
+06-May-23 17:07:04 - server - 35485 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 53, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 56, in send
+    raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
+cmdpipe.NotConnected: You must run Transmitter.connect() before attempting to send data.
+06-May-23 17:07:04 - werkzeug - 35485 - INFO - 127.0.0.1 - - [06/May/2023 17:07:04] "[35m[1mGET /joystick?data={%22x%22:-7,%22y%22:-20} HTTP/1.1[0m" 500 -
+06-May-23 17:07:04 - server - 35485 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 53, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 56, in send
+    raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
+cmdpipe.NotConnected: You must run Transmitter.connect() before attempting to send data.
+06-May-23 17:07:04 - werkzeug - 35485 - INFO - 127.0.0.1 - - [06/May/2023 17:07:04] "[35m[1mGET /joystick?data={%22x%22:-7,%22y%22:-37} HTTP/1.1[0m" 500 -
+06-May-23 17:07:04 - server - 35485 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 53, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 56, in send
+    raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
+cmdpipe.NotConnected: You must run Transmitter.connect() before attempting to send data.
+06-May-23 17:07:04 - werkzeug - 35485 - INFO - 127.0.0.1 - - [06/May/2023 17:07:04] "[35m[1mGET /joystick?data={%22x%22:-7,%22y%22:-46} HTTP/1.1[0m" 500 -
+06-May-23 17:07:04 - server - 35485 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 53, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 56, in send
+    raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
+cmdpipe.NotConnected: You must run Transmitter.connect() before attempting to send data.
+06-May-23 17:07:04 - werkzeug - 35485 - INFO - 127.0.0.1 - - [06/May/2023 17:07:04] "[35m[1mGET /joystick?data={%22x%22:-7,%22y%22:-55} HTTP/1.1[0m" 500 -
+06-May-23 17:07:04 - server - 35485 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 53, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 56, in send
+    raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
+cmdpipe.NotConnected: You must run Transmitter.connect() before attempting to send data.
+06-May-23 17:07:04 - werkzeug - 35485 - INFO - 127.0.0.1 - - [06/May/2023 17:07:04] "[35m[1mGET /joystick?data={%22x%22:-7,%22y%22:-58} HTTP/1.1[0m" 500 -
+06-May-23 17:07:04 - werkzeug - 35485 - INFO - 127.0.0.1 - - [06/May/2023 17:07:04] "GET /joystick?data={%22x%22:-7,%22y%22:-58} HTTP/1.1" 200 -
+06-May-23 17:07:04 - server - 35485 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 53, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 56, in send
+    raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
+cmdpipe.NotConnected: You must run Transmitter.connect() before attempting to send data.
+06-May-23 17:07:04 - werkzeug - 35485 - INFO - 127.0.0.1 - - [06/May/2023 17:07:04] "[35m[1mGET /joystick?data={%22x%22:0,%22y%22:0} HTTP/1.1[0m" 500 -
+06-May-23 17:07:05 - werkzeug - 35485 - INFO - 127.0.0.1 - - [06/May/2023 17:07:05] "GET /joystick?data={%22x%22:0,%22y%22:0} HTTP/1.1" 200 -
+06-May-23 17:07:05 - server - 35485 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 53, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 56, in send
+    raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
+cmdpipe.NotConnected: You must run Transmitter.connect() before attempting to send data.
+06-May-23 17:07:05 - werkzeug - 35485 - INFO - 127.0.0.1 - - [06/May/2023 17:07:05] "[35m[1mGET /joystick?data={%22x%22:0,%22y%22:25} HTTP/1.1[0m" 500 -
+06-May-23 17:07:05 - server - 35485 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 53, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 56, in send
+    raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
+cmdpipe.NotConnected: You must run Transmitter.connect() before attempting to send data.
+06-May-23 17:07:05 - werkzeug - 35485 - INFO - 127.0.0.1 - - [06/May/2023 17:07:05] "[35m[1mGET /joystick?data={%22x%22:0,%22y%22:22} HTTP/1.1[0m" 500 -
+06-May-23 17:07:05 - server - 35485 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 53, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 56, in send
+    raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
+cmdpipe.NotConnected: You must run Transmitter.connect() before attempting to send data.
+06-May-23 17:07:05 - werkzeug - 35485 - INFO - 127.0.0.1 - - [06/May/2023 17:07:05] "[35m[1mGET /joystick?data={%22x%22:0,%22y%22:9} HTTP/1.1[0m" 500 -
+06-May-23 17:07:05 - server - 35485 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 53, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 56, in send
+    raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
+cmdpipe.NotConnected: You must run Transmitter.connect() before attempting to send data.
+06-May-23 17:07:05 - werkzeug - 35485 - INFO - 127.0.0.1 - - [06/May/2023 17:07:05] "[35m[1mGET /joystick?data={%22x%22:0,%22y%22:-43} HTTP/1.1[0m" 500 -
+06-May-23 17:07:05 - server - 35485 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 53, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 56, in send
+    raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
+cmdpipe.NotConnected: You must run Transmitter.connect() before attempting to send data.
+06-May-23 17:07:05 - werkzeug - 35485 - INFO - 127.0.0.1 - - [06/May/2023 17:07:05] "[35m[1mGET /joystick?data={%22x%22:0,%22y%22:-78} HTTP/1.1[0m" 500 -
+06-May-23 17:07:05 - server - 35485 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 53, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 56, in send
+    raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
+cmdpipe.NotConnected: You must run Transmitter.connect() before attempting to send data.
+06-May-23 17:07:05 - werkzeug - 35485 - INFO - 127.0.0.1 - - [06/May/2023 17:07:05] "[35m[1mGET /joystick?data={%22x%22:0,%22y%22:-100} HTTP/1.1[0m" 500 -
+06-May-23 17:07:05 - werkzeug - 35485 - INFO - 127.0.0.1 - - [06/May/2023 17:07:05] "GET /joystick?data={%22x%22:0,%22y%22:-100} HTTP/1.1" 200 -
+06-May-23 17:07:05 - werkzeug - 35485 - INFO - 127.0.0.1 - - [06/May/2023 17:07:05] "GET /joystick?data={%22x%22:0,%22y%22:-100} HTTP/1.1" 200 -
+06-May-23 17:07:05 - werkzeug - 35485 - INFO - 127.0.0.1 - - [06/May/2023 17:07:05] "GET /joystick?data={%22x%22:0,%22y%22:-100} HTTP/1.1" 200 -
+06-May-23 17:07:05 - server - 35485 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 53, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 56, in send
+    raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
+cmdpipe.NotConnected: You must run Transmitter.connect() before attempting to send data.
+06-May-23 17:07:05 - werkzeug - 35485 - INFO - 127.0.0.1 - - [06/May/2023 17:07:05] "[35m[1mGET /joystick?data={%22x%22:0,%22y%22:0} HTTP/1.1[0m" 500 -
+06-May-23 17:09:27 - root - 35636 - INFO - Creating motor handler...
+06-May-23 17:09:27 - root - 35636 - INFO - Starting server...
+06-May-23 17:09:27 - root - 35636 - INFO - Preparing to run on localhost:8080...
+06-May-23 17:09:27 - root - 35636 - INFO - Server thread started!
+06-May-23 17:09:27 - werkzeug - 35636 - INFO -  * Running on http://localhost:8080/ (Press CTRL+C to quit)
+06-May-23 17:09:33 - werkzeug - 35636 - INFO - 127.0.0.1 - - [06/May/2023 17:09:33] "GET / HTTP/1.1" 200 -
+06-May-23 17:09:38 - werkzeug - 35636 - INFO - 127.0.0.1 - - [06/May/2023 17:09:38] "GET / HTTP/1.1" 200 -
+06-May-23 17:21:19 - root - 36294 - INFO - Creating motor handler...
+06-May-23 17:21:19 - root - 36294 - INFO - Starting server...
+06-May-23 17:21:19 - root - 36294 - INFO - Preparing to run on localhost:8080...
+06-May-23 17:21:19 - root - 36294 - INFO - Server thread started!
+06-May-23 17:21:19 - werkzeug - 36294 - INFO -  * Running on http://localhost:8080/ (Press CTRL+C to quit)
+06-May-23 17:21:25 - server - 36294 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 53, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 56, in send
+    raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
+cmdpipe.NotConnected: You must run Transmitter.connect() before attempting to send data.
+06-May-23 17:21:25 - server - 36294 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 53, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 56, in send
+    raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
+cmdpipe.NotConnected: You must run Transmitter.connect() before attempting to send data.
+06-May-23 17:21:25 - werkzeug - 36294 - INFO - 127.0.0.1 - - [06/May/2023 17:21:25] "[35m[1mGET /joystick?data={%22x%22:0,%22y%22:0} HTTP/1.1[0m" 500 -
+06-May-23 17:21:25 - werkzeug - 36294 - INFO - 127.0.0.1 - - [06/May/2023 17:21:25] "[35m[1mGET /joystick?data={%22x%22:-11,%22y%22:-3} HTTP/1.1[0m" 500 -
+06-May-23 17:21:25 - server - 36294 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 53, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 56, in send
+    raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
+cmdpipe.NotConnected: You must run Transmitter.connect() before attempting to send data.
+06-May-23 17:21:25 - werkzeug - 36294 - INFO - 127.0.0.1 - - [06/May/2023 17:21:25] "[35m[1mGET /joystick?data={%22x%22:-11,%22y%22:-9} HTTP/1.1[0m" 500 -
+06-May-23 17:21:26 - server - 36294 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 53, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 56, in send
+    raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
+cmdpipe.NotConnected: You must run Transmitter.connect() before attempting to send data.
+06-May-23 17:21:26 - server - 36294 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 53, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 56, in send
+    raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
+cmdpipe.NotConnected: You must run Transmitter.connect() before attempting to send data.
+06-May-23 17:21:26 - server - 36294 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 53, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 56, in send
+    raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
+cmdpipe.NotConnected: You must run Transmitter.connect() before attempting to send data.
+06-May-23 17:21:26 - werkzeug - 36294 - INFO - 127.0.0.1 - - [06/May/2023 17:21:26] "[35m[1mGET /joystick?data={%22x%22:-11,%22y%22:-41} HTTP/1.1[0m" 500 -
+06-May-23 17:21:26 - werkzeug - 36294 - INFO - 127.0.0.1 - - [06/May/2023 17:21:26] "[35m[1mGET /joystick?data={%22x%22:-11,%22y%22:-22} HTTP/1.1[0m" 500 -
+06-May-23 17:21:26 - werkzeug - 36294 - INFO - 127.0.0.1 - - [06/May/2023 17:21:26] "[35m[1mGET /joystick?data={%22x%22:-11,%22y%22:-96} HTTP/1.1[0m" 500 -
+06-May-23 17:21:26 - server - 36294 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 53, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 56, in send
+    raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
+cmdpipe.NotConnected: You must run Transmitter.connect() before attempting to send data.
+06-May-23 17:21:26 - werkzeug - 36294 - INFO - 127.0.0.1 - - [06/May/2023 17:21:26] "[35m[1mGET /joystick?data={%22x%22:-11,%22y%22:-99} HTTP/1.1[0m" 500 -
+06-May-23 17:21:26 - server - 36294 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 53, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 56, in send
+    raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
+cmdpipe.NotConnected: You must run Transmitter.connect() before attempting to send data.
+06-May-23 17:21:26 - werkzeug - 36294 - INFO - 127.0.0.1 - - [06/May/2023 17:21:26] "[35m[1mGET /joystick?data={%22x%22:-9.204456949066014,%22y%22:-99.5754888126229} HTTP/1.1[0m" 500 -
+06-May-23 17:21:26 - server - 36294 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 53, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 56, in send
+    raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
+cmdpipe.NotConnected: You must run Transmitter.connect() before attempting to send data.
+06-May-23 17:21:26 - werkzeug - 36294 - INFO - 127.0.0.1 - - [06/May/2023 17:21:26] "[35m[1mGET /joystick?data={%22x%22:-10.202886549856942,%22y%22:-99.4781438611052} HTTP/1.1[0m" 500 -
+06-May-23 17:21:26 - server - 36294 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 53, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 56, in send
+    raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
+cmdpipe.NotConnected: You must run Transmitter.connect() before attempting to send data.
+06-May-23 17:21:26 - werkzeug - 36294 - INFO - 127.0.0.1 - - [06/May/2023 17:21:26] "[35m[1mGET /joystick?data={%22x%22:0,%22y%22:0} HTTP/1.1[0m" 500 -
+06-May-23 17:21:29 - werkzeug - 36294 - INFO - 127.0.0.1 - - [06/May/2023 17:21:29] "GET / HTTP/1.1" 200 -
+06-May-23 17:21:32 - werkzeug - 36294 - INFO - 127.0.0.1 - - [06/May/2023 17:21:32] "GET /joystick?data={%22x%22:0,%22y%22:0} HTTP/1.1" 200 -
+06-May-23 17:21:32 - server - 36294 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 53, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 56, in send
+    raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
+cmdpipe.NotConnected: You must run Transmitter.connect() before attempting to send data.
+06-May-23 17:21:32 - werkzeug - 36294 - INFO - 127.0.0.1 - - [06/May/2023 17:21:32] "[35m[1mGET /joystick?data={%22x%22:-6,%22y%22:2} HTTP/1.1[0m" 500 -
+06-May-23 17:21:32 - server - 36294 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 53, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 56, in send
+    raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
+cmdpipe.NotConnected: You must run Transmitter.connect() before attempting to send data.
+06-May-23 17:21:32 - werkzeug - 36294 - INFO - 127.0.0.1 - - [06/May/2023 17:21:32] "[35m[1mGET /joystick?data={%22x%22:-6,%22y%22:-8} HTTP/1.1[0m" 500 -
+06-May-23 17:21:32 - server - 36294 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 53, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 56, in send
+    raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
+cmdpipe.NotConnected: You must run Transmitter.connect() before attempting to send data.
+06-May-23 17:21:32 - werkzeug - 36294 - INFO - 127.0.0.1 - - [06/May/2023 17:21:32] "[35m[1mGET /joystick?data={%22x%22:-6,%22y%22:-20} HTTP/1.1[0m" 500 -
+06-May-23 17:21:33 - server - 36294 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 53, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 56, in send
+    raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
+cmdpipe.NotConnected: You must run Transmitter.connect() before attempting to send data.
+06-May-23 17:21:33 - werkzeug - 36294 - INFO - 127.0.0.1 - - [06/May/2023 17:21:33] "[35m[1mGET /joystick?data={%22x%22:-6,%22y%22:-39} HTTP/1.1[0m" 500 -
+06-May-23 17:21:33 - server - 36294 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 53, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 56, in send
+    raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
+cmdpipe.NotConnected: You must run Transmitter.connect() before attempting to send data.
+06-May-23 17:21:33 - werkzeug - 36294 - INFO - 127.0.0.1 - - [06/May/2023 17:21:33] "[35m[1mGET /joystick?data={%22x%22:-6,%22y%22:-49} HTTP/1.1[0m" 500 -
+06-May-23 17:21:33 - server - 36294 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 53, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 56, in send
+    raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
+cmdpipe.NotConnected: You must run Transmitter.connect() before attempting to send data.
+06-May-23 17:21:33 - werkzeug - 36294 - INFO - 127.0.0.1 - - [06/May/2023 17:21:33] "[35m[1mGET /joystick?data={%22x%22:-6,%22y%22:-65} HTTP/1.1[0m" 500 -
+06-May-23 17:21:33 - server - 36294 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 53, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 56, in send
+    raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
+cmdpipe.NotConnected: You must run Transmitter.connect() before attempting to send data.
+06-May-23 17:21:33 - werkzeug - 36294 - INFO - 127.0.0.1 - - [06/May/2023 17:21:33] "[35m[1mGET /joystick?data={%22x%22:-6,%22y%22:-74} HTTP/1.1[0m" 500 -
+06-May-23 17:21:33 - server - 36294 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 53, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 56, in send
+    raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
+cmdpipe.NotConnected: You must run Transmitter.connect() before attempting to send data.
+06-May-23 17:21:33 - werkzeug - 36294 - INFO - 127.0.0.1 - - [06/May/2023 17:21:33] "[35m[1mGET /joystick?data={%22x%22:-6,%22y%22:-78} HTTP/1.1[0m" 500 -
+06-May-23 17:21:33 - server - 36294 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 53, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 56, in send
+    raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
+cmdpipe.NotConnected: You must run Transmitter.connect() before attempting to send data.
+06-May-23 17:21:33 - werkzeug - 36294 - INFO - 127.0.0.1 - - [06/May/2023 17:21:33] "[35m[1mGET /joystick?data={%22x%22:-6,%22y%22:-88} HTTP/1.1[0m" 500 -
+06-May-23 17:21:33 - werkzeug - 36294 - INFO - 127.0.0.1 - - [06/May/2023 17:21:33] "GET /joystick?data={%22x%22:-6,%22y%22:-89} HTTP/1.1" 200 -
+06-May-23 17:21:33 - werkzeug - 36294 - INFO - 127.0.0.1 - - [06/May/2023 17:21:33] "GET /joystick?data={%22x%22:-6,%22y%22:-89} HTTP/1.1" 200 -
+06-May-23 17:21:33 - server - 36294 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 53, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 56, in send
+    raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
+cmdpipe.NotConnected: You must run Transmitter.connect() before attempting to send data.
+06-May-23 17:21:33 - werkzeug - 36294 - INFO - 127.0.0.1 - - [06/May/2023 17:21:33] "[35m[1mGET /joystick?data={%22x%22:-5,%22y%22:-88} HTTP/1.1[0m" 500 -
+06-May-23 17:21:33 - server - 36294 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 53, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 56, in send
+    raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
+cmdpipe.NotConnected: You must run Transmitter.connect() before attempting to send data.
+06-May-23 17:21:33 - server - 36294 - ERROR - Exception on /joystick [GET]
+Traceback (most recent call last):
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Aiden/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/server.py", line 53, in joystick
+    self.motor_handler.send_motor_data(bytes(data, "utf-8"))
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/motorfrontend.py", line 58, in send_motor_data
+    self.command_pipe.send(data)
+  File "/Users/Aiden/Desktop/B3rryClientServer/ClientSide/cmdpipe.py", line 56, in send
+    raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
+cmdpipe.NotConnected: You must run Transmitter.connect() before attempting to send data.
+06-May-23 17:21:33 - werkzeug - 36294 - INFO - 127.0.0.1 - - [06/May/2023 17:21:33] "[35m[1mGET /joystick?data={%22x%22:-4,%22y%22:-87} HTTP/1.1[0m" 500 -
+06-May-23 17:21:33 - werkzeug - 36294 - INFO - 127.0.0.1 - - [06/May/2023 17:21:33] "[35m[1mGET /joystick?data={%22x%22:0,%22y%22:0} HTTP/1.1[0m" 500 -
+06-May-23 17:23:25 - root - 36415 - INFO - Creating and connecting motor handler...
+06-May-23 17:25:00 - root - 36507 - INFO - Creating and connecting motor handler...
+06-May-23 17:25:57 - root - 36559 - INFO - Creating and connecting motor handler...
+06-May-23 17:29:54 - root - 36781 - INFO - Creating and connecting motor handler...

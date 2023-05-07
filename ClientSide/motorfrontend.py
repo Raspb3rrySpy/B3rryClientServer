@@ -21,7 +21,7 @@ import logging
 
 
 class MotorHandler:
-    def __init__(self, hostname, port, logname="motorhandler.log"):
+    def __init__(self, hostname, port):
         self.command_pipe = cmdpipe.Transmitter(hostname, port)
         self.last_data_sent = None
         self.turbo = False

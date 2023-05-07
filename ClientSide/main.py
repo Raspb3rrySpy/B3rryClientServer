@@ -28,8 +28,9 @@ logging.basicConfig(filename="b3rry.log",
                     datefmt='%d-%b-%y %H:%M:%S', level=logging.NOTSET)
 logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
 
-logging.info("Creating motor handler...")
-motor_handler = motorfrontend.MotorHandler("localhost", 30000)
+logging.info("Creating and connecting motor handler...")
+motor_handler = motorfrontend.MotorHandler("192.168.42.14", 30000)
+motor_handler.connect()
 
 logging.info("Starting server...")
 client_server = server.Server("localhost", 8080, motor_handler)
