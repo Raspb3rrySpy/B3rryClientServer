@@ -20,13 +20,17 @@ import cmdpipe
 import logging
 
 
+def clamp(n, minn, maxn):
+    return max(min(maxn, n), minn)
+
+
 class MotorHandler:
     def __init__(self, hostname, port):
         self.command_pipe = cmdpipe.Transmitter(hostname, port)
         self.last_data_sent = None
         self.turbo = False
 
-    def parse_joystick_data(self, data: dict, scale=1):
+    def parse_joystick_data(self, data: dict, scale=0.5):
         """
         Takes raw joystick data and converts it to
         left and right motor speeds
@@ -43,9 +47,9 @@ class MotorHandler:
         left = scale * (y + x)
         right = scale * (y - x)
         if not self.turbo:
-            left = int(left/2)
-            right = int(right/2)
-        return {"left": int(left), "right": int(right)}
+            left = left/2
+            right = right/2
+        return {"left": clamp(int(left), -100, 100), "right": clamp(int(right), -100, 100)}
 
     def connect(self):
         self.command_pipe.connect()

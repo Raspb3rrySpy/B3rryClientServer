@@ -61,6 +61,6 @@ class FPVServer:
         # Start the server
         start_server = websockets.serve(self.handle_connection, self.host, self.port)
         # Do async stuff
-        asyncio.set_event_loop(asyncio.new_event_loop())
         asyncio.get_event_loop().run_until_complete(start_server)
         logging.info("Started server on " + "ws://" + str(self.host) + ":" + str(self.port) + "/")
+        asyncio.get_event_loop().run_forever()

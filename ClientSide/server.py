@@ -48,6 +48,7 @@ class Server:
         data = json.loads(request.args.get("data"))
         if data:
             # Package data:
+            logging.info(data)
             data = self.motor_handler.parse_joystick_data(data)
             logging.info(data)
             data = json.dumps(data)
