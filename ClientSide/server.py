@@ -49,6 +49,7 @@ class Server:
         if data:
             # Package data:
             data = self.motor_handler.parse_joystick_data(data)
+            logging.info(data)
             data = json.dumps(data)
             self.motor_handler.send_motor_data(bytes(data, "utf-8"))
         return ""
