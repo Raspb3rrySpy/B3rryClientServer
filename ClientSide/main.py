@@ -29,7 +29,7 @@ logging.basicConfig(filename="b3rry.log",
 logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
 
 logging.info("Creating motor handler...")
-motor_handler = motorfrontend.MotorHandler("localhost", 32000)
+motor_handler = motorfrontend.MotorHandler("localhost", 30000)
 
 logging.info("Starting server...")
 client_server = server.Server("localhost", 8080, motor_handler)

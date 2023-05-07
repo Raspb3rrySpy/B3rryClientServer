@@ -28,7 +28,7 @@ logging.basicConfig(filename="b3rry.log",
 logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
 
 logging.info("Starting motor server...")
-motor_server = motorbackend.MotorServer("localhost", 10000)
+motor_server = motorbackend.MotorServer("localhost", 30000)
 motor_server_thread = threading.Thread(target=motor_server.start)
 motor_server_thread.start()
 logging.info("Motor server thread started!")
