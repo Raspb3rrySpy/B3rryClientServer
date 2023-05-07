@@ -31,11 +31,12 @@ class MotorServer:
     def handle_data(self, data):
         if not data:
             return
+        logging.info(data)
         data = json.loads(data)
+        logging.info(data)
         if not isinstance(data.get("left"), int) or not isinstance(data.get("right"), int):
             logging.info(f"Invalid data: {data}")
             return
-        logging.info(f"left: {data.get('left')} right: {data.get('right')}")
         robohat.setLeftSpeed(data.get("left"))
         robohat.setRightSpeed(data.get("right"))
 
