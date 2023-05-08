@@ -42,7 +42,9 @@ class Server:
         return render_template("client.html")
 
     def client(self):
-        return render_template("client.html")
+        response = flask.Response(render_template("client.html"))
+        response.headers['Access-Control-Allow-Origin'] = '*'
+        return response
 
     def joystick(self):
         data = json.loads(request.args.get("data"))

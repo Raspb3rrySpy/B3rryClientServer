@@ -30,7 +30,7 @@ logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
 
 logging.info("Creating and connecting motor handler...")
 motor_handler = motorfrontend.MotorHandler("192.168.42.14", 30000)
-motor_handler.connect()
+#motor_handler.connect()
 
 logging.info("Starting server...")
 client_server = server.Server("localhost", 8080, motor_handler)
