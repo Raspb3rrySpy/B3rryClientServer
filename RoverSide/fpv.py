@@ -1,6 +1,6 @@
 """
 fpv.py
-WebSocket FPV server for B3rry client
+Flask FPV server
 Copyright (C) 2022  Aiden Bohlander
 
 This program is free software: you can redistribute it and/or modify
@@ -16,13 +16,9 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
-import sys
-import time
 import cv2
-import asyncio
-import websockets
-import base64
 import logging
+from flask import Flask, Response, render_template, request
 
 
 class FPVServer:
@@ -30,37 +26,30 @@ class FPVServer:
         self.host = host
         self.port = port
         self.camera = None
-
-    async def handle_connection(self, websocket):
-        """
-        Websocket connection handler
-        :param websocket: Conected websocket
-        :return: None
-        """
-        for frame in get_frames():
-            await websocket.send(frame)
+        self.app = Flask(__name__)
+        self.app.route('/')(self.stream)
 
     def get_frames(self):
-        """
-        Generator function that uses cv2 to stream frames to a websocket,
-        yielding byte-encoded frames.
-        :return: None
-        """
         while True:
-            success, frame = camera.read()  # read the camera frame
+            success, frame = self.camera.read()  # read the camera frame
             if not success:
                 break
             else:
-                _, buffer = cv2.imencode('.png', frame)
-                frame = base64.b64encode(buffer)
-                yield bytes(str(time.time() * 1000), "ascii") + b':time:' + b'data:image/png;base64,' + frame
+                _, buffer = cv2.imencode('.jpg', frame)
+                frame = buffer.tobytes()
+                yield (b'--frame\r\n'
+                       b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+
+    def stream(self):
+        return Response(self.get_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
     def start(self):
         # Start video capture
         self.camera = cv2.VideoCapture(0)
-        # Start the server
-        start_server = websockets.serve(self.handle_connection, self.host, self.port)
-        # Do async stuff
-        asyncio.get_event_loop().run_until_complete(start_server)
-        logging.info("Started server on " + "ws://" + str(self.host) + ":" + str(self.port) + "/")
-        asyncio.get_event_loop().run_forever()
+        logging.info(f"Preparing to run FPV server on {self.host}:{self.port}")
+        self.app.run(host=self.host, port=self.port)
+
+
+if __name__ == "__main__":
+    testserver = FPVServer("localhost", 8080)
+    testserver.start()

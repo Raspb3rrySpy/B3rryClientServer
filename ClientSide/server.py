@@ -70,5 +70,5 @@ class Server:
     def start(self):
         #self.motor_handler.connect()
         # Run the app:
-        logging.info(f"Preparing to run on {self.host}:{self.port}...")
+        logging.info(f"Preparing to client server on {self.host}:{self.port}...")
         self.app.run(host=self.host, port=self.port)

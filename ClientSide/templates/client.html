@@ -26,14 +26,7 @@
             font-family: sans-serif;
         }
         body {
-            margin: 0;
-            overflow: hidden;
-        }
-        .bgimg {
-            display: block;
-            width: 100vw;
-            height: 100vh;
-            object-fit: cover;
+            background-image: url("http://localhost:8080/");
         }
         #leftjoy {
             position: absolute;
@@ -194,19 +187,6 @@
             xhr.open("GET", "/joystick?data="+data);
             xhr.send();
         });
-
-        // Start recieving FPV:
-        test = new WebSocket("ws://localhost:8000/");
-
-        test.onmessage = async function (event) {
-		    var text = await event.data.text();
-            var data = text.split(":time:");
-            var time = data[0];
-            var image = data[1];
-            $("stream").src = image;
-            time = Date.now() - time;
-            $("ms").innerText = Math.round(time);
-        }
 
         var isSwipe = false;
         var lastX = 0;
