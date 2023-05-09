@@ -47,8 +47,8 @@ class MotorHandler:
         left = scale * (y + x)
         right = scale * (y - x)
         if not self.turbo:
-            left = left/2
-            right = right/2
+            left = left // 1.3
+            right = right // 1.3
         return {"left": clamp(int(left), -100, 100), "right": clamp(int(right), -100, 100)}
 
     def connect(self):
