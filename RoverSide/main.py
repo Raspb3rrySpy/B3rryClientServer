@@ -29,11 +29,11 @@ logging.basicConfig(filename="b3rry.log",
 logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
 
 logging.info("Starting motor server...")
-motor_server = motorbackend.MotorServer("192.168.42.14", 30000)
+motor_server = motorbackend.MotorServer("10.42.0.1", 30000)
 motor_server_thread = threading.Thread(target=motor_server.start)
 motor_server_thread.start()
 logging.info("Motor server thread started!")
 
 logging.info("Starting FPV server...")
-fpv_server = fpv.FPVServer("192.168.42.14", 20000)
+fpv_server = fpv.FPVServer("10.42.0.1", 20000)
 fpv_server.start()
