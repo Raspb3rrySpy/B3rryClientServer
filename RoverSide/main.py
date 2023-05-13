@@ -32,7 +32,7 @@ logging.basicConfig(filename="b3rry.log",
 logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
 
 
-private_ip = socket.gethostbyname(socket.gethostname())
+private_ip = "localhost" #socket.gethostbyname(socket.gethostname())
 fpv_port = 20000
 motor_port = 30000
 telemetry_port = 40000
@@ -47,7 +47,7 @@ def handle_telemetry(data):
             # Client wants connection data, let's give it to them:
             return_data = {"type": "connect_data_response", "content": {"private_ip": private_ip, "fpv_port": fpv_port,
                                                                         "motor_port": motor_port}}
-            return bytes(json.dumps(return_data))
+            return bytes(json.dumps(return_data), "ascii")
 
     except json.JSONDecodeError as e:
         logging.error(f"Error decoding telemetry data: {e}")
@@ -62,7 +62,8 @@ logging.info("Motor server thread started!")
 
 logging.info("Starting telemetry server...")
 telemetry_server = telemetryserver.TelemetryServer(private_ip, telemetry_port)
-telemetry_server_thread = threading.Thread(target=telemetry_server.start, args=())
+telemetry_server_thread = threading.Thread(target=telemetry_server.start, args=(handle_telemetry,))
+telemetry_server_thread.start()
 logging.info("Telemetry server thread started!")
 
 logging.info("Starting FPV server...")

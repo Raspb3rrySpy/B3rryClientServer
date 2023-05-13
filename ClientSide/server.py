@@ -21,15 +21,18 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 import json
 import logging
 from flask import Flask, Response, render_template, request
+import motorfrontend
+import telemetryclient
 
 
 class Server:
-    def __init__(self, host, port, motor_handler):
+    def __init__(self, host, port):
         # Initialize Flask:
         self.app = Flask(__name__)
         self.host = host
         self.port = port
-        self.motor_handler = motor_handler
+        self.motor_handler = None
+        self.telemetry_client = None
 
         # Set up routes:
         self.app.route("/")(self.index)
@@ -43,6 +46,24 @@ class Server:
         return render_template("index.html")
 
     def connect(self):
+        ip = request.args.get("ip")
+        port = int(request.args.get("port"))
+        if ip and port:
+            logging.info(f"Preparing to send connect_data_request to {ip}:{port}...")
+            self.telemetry_client = telemetryclient.TelemetryClient(ip, port)
+            request_data = {"type": "connect_data_request"}
+            request_data = json.dumps(request_data)
+            self.telemetry_client.connect()
+            telemetry = self.telemetry_client.request_telemetry(bytes(request_data, "ascii"), 5)
+            telemetry = json.loads(telemetry)
+            if telemetry.get("type") == "connect_data_response":
+                content = telemetry.get("content")
+                remote_ip = content.get("private_ip")
+                fpv_port = content.get("fpv_port")
+                motor_port = content.get("motor_port")
+                self.motor_handler = motorfrontend.MotorHandler(remote_ip, motor_port)
+                #self.motor_handler.connect()
+                return render_template("client.html", fpv_url=f"http://{remote_ip}:{fpv_port}/")
         return ""
 
     def client(self):
@@ -70,7 +91,5 @@ class Server:
         return ""
 
     def start(self):
-        self.motor_handler.connect()
-        # Run the app:
         logging.info(f"Preparing to client server on {self.host}:{self.port}...")
         self.app.run(host=self.host, port=self.port)

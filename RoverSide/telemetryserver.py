@@ -29,7 +29,6 @@ class TelemetryServer:
         self.hostname = hostname
         self.port = port
         self.socket = None
-        self.callback = None
 
     def start(self, callback):
         """
@@ -38,9 +37,9 @@ class TelemetryServer:
         :param callback: Function to be called when a packet is recieved.
         :return: None
         """
-        self.callback = callback
         self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.socket.bind((self.hostname, self.port))
+        print(f"preparing to listen on {self.hostname}:{self.port}")
         self.socket.listen()
         while True:
             connection, address = self.socket.accept()
@@ -50,4 +49,4 @@ class TelemetryServer:
                     data = connection.recv(2048)
                     if not data:
                         break
-                    connection.sendall(self.callback(data))
+                    connection.sendall(callback(data))

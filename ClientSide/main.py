@@ -20,7 +20,6 @@ import sys
 import threading
 import logging
 import server
-import motorfrontend
 
 
 logging.basicConfig(filename="b3rry.log",
@@ -28,12 +27,9 @@ logging.basicConfig(filename="b3rry.log",
                     datefmt='%d-%b-%y %H:%M:%S', level=logging.NOTSET)
 logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
 
-logging.info("Creating and connecting motor handler...")
-motor_handler = motorfrontend.MotorHandler("10.42.0.1", 30000)
-motor_handler.connect()
 
 logging.info("Starting server...")
-client_server = server.Server("localhost", 8080, motor_handler)
+client_server = server.Server("localhost", 8080)
 server_thread = threading.Thread(target=client_server.start)
 server_thread.start()
 logging.info("Server thread started!")
