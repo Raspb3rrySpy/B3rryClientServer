@@ -37,14 +37,16 @@ class Server:
         self.app.route("/joystick")(self.joystick)
         self.app.route("/pantilt")(self.pantilt)
         self.app.route("/turbo")(self.turbo)
+        self.app.route("/connect")(self.connect)
 
     def index(self):
-        return render_template("client.html")
+        return render_template("index.html")
+
+    def connect(self):
+        return ""
 
     def client(self):
-        response = flask.Response(render_template("client.html"))
-        response.headers['Access-Control-Allow-Origin'] = '*'
-        return response
+        return render_template("client.html")
 
     def joystick(self):
         data = json.loads(request.args.get("data"))
@@ -68,7 +70,7 @@ class Server:
         return ""
 
     def start(self):
-        #self.motor_handler.connect()
+        self.motor_handler.connect()
         # Run the app:
         logging.info(f"Preparing to client server on {self.host}:{self.port}...")
         self.app.run(host=self.host, port=self.port)

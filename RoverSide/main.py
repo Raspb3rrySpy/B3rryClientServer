@@ -16,9 +16,12 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
+import socket
 import logging
 import threading
-import motorbackend
+#import motorbackend
+import telemetryserver
+import json
 import fpv
 import sys
 
@@ -28,12 +31,40 @@ logging.basicConfig(filename="b3rry.log",
                     datefmt='%d-%b-%y %H:%M:%S', level=logging.NOTSET)
 logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
 
+
+private_ip = socket.gethostbyname(socket.gethostname())
+fpv_port = 20000
+motor_port = 30000
+telemetry_port = 40000
+
+
+def handle_telemetry(data):
+    if not data:
+        logging.debug(f"Invalid telemetry data: {data}")
+    try:
+        data = json.loads(data)
+        if data.get("type") == "connect_data_request":
+            # Client wants connection data, let's give it to them:
+            return_data = {"type": "connect_data_response", "content": {"private_ip": private_ip, "fpv_port": fpv_port,
+                                                                        "motor_port": motor_port}}
+            return bytes(json.dumps(return_data))
+
+    except json.JSONDecodeError as e:
+        logging.error(f"Error decoding telemetry data: {e}")
+
+"""
 logging.info("Starting motor server...")
-motor_server = motorbackend.MotorServer("10.42.0.1", 30000)
+motor_server = motorbackend.MotorServer(private_ip, motor_port)
 motor_server_thread = threading.Thread(target=motor_server.start)
 motor_server_thread.start()
 logging.info("Motor server thread started!")
+"""
+
+logging.info("Starting telemetry server...")
+telemetry_server = telemetryserver.TelemetryServer(private_ip, telemetry_port)
+telemetry_server_thread = threading.Thread(target=telemetry_server.start, args=())
+logging.info("Telemetry server thread started!")
 
 logging.info("Starting FPV server...")
-fpv_server = fpv.FPVServer("10.42.0.1", 20000)
+fpv_server = fpv.FPVServer(private_ip, fpv_port)
 fpv_server.start()

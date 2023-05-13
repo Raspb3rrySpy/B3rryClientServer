@@ -1,7 +1,7 @@
 """
-cmdpipe.py
-Class definitions for commandpipe module.
-Copyright (C) 2022  Aiden Bohlander
+telemetryserver.py
+Socket based telemetry server.
+Copyright (C) 2023 Aiden Bohlander
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -20,48 +20,10 @@ import socket
 import logging
 
 
-class NotConnected(Exception):
+class TelemetryServer:
     """
-    Error raised when Transmitter socket is None.
-    """
-    pass
-
-
-class Transmitter:
-    """
-    Transmitter:
-    Transmits packets via socket to a Reciever.
-    """
-    def __init__(self, hostname, port):
-        self.hostname = hostname
-        self.port = port
-        self.socket = None
-
-    def connect(self):
-        """
-        Connect to a Reciever.
-        :return: None
-        """
-        self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.socket.connect((self.hostname, self.port))
-
-    def send(self, data: bytes):
-        """
-        Sends data to a remote Reciever.
-        You MUST call connect first, otherwise it
-        will raise a NotConnected error.
-        :param data: Data to be sent
-        :return: None
-        """
-        if self.socket is None:
-            raise NotConnected("You must run Transmitter.connect() before attempting to send data.")
-        self.socket.sendall(data)
-
-
-class Reciever:
-    """
-    Reciever:
-    Recieves packets sent via socket from a Transmitter.
+    TelemetryServer:
+    Sends and recieves from a TelemetryClient.
     """
     def __init__(self, hostname, port):
         self.hostname = hostname
@@ -69,7 +31,7 @@ class Reciever:
         self.socket = None
         self.callback = None
 
-    def listen(self, callback):
+    def start(self, callback):
         """
         This function blocks indefinitely, listening on a socket, so run it
         in a new thread.
@@ -88,4 +50,4 @@ class Reciever:
                     data = connection.recv(2048)
                     if not data:
                         break
-                    self.callback(data)
+                    connection.sendall(self.callback(data))
