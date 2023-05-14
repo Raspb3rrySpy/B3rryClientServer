@@ -21,8 +21,10 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 import json
 import logging
 from flask import Flask, Response, render_template, request
+import threading
 import motorfrontend
 import telemetryclient
+import heartbeatclient
 
 
 class Server:
@@ -33,6 +35,7 @@ class Server:
         self.port = port
         self.motor_handler = None
         self.telemetry_client = None
+        self.heart_client = None
 
         # Set up routes:
         self.app.route("/")(self.index)
@@ -61,7 +64,11 @@ class Server:
                 remote_ip = content.get("private_ip")
                 fpv_port = content.get("fpv_port")
                 motor_port = content.get("motor_port")
+                heart_port = content.get("heart_port")
                 self.motor_handler = motorfrontend.MotorHandler(remote_ip, motor_port)
+                self.heart_client = heartbeatclient.HeartBeatClient(remote_ip, heart_port)
+                heart_thread = threading.Thread(target=self.heart_client.start_beating)
+                heart_thread.start()
                 #self.motor_handler.connect()
                 return render_template("client.html", fpv_url=f"http://{remote_ip}:{fpv_port}/")
         return ""

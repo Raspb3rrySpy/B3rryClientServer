@@ -1,6 +1,6 @@
 """
-telemetryserver.py
-Socket based telemetry server.
+heartbeatclient.py
+Connects to a HeartBeatServer and keeps it from flipping out.
 Copyright (C) 2023 Aiden Bohlander
 
 This program is free software: you can redistribute it and/or modify
@@ -20,33 +20,36 @@ import socket
 import logging
 
 
-class TelemetryServer:
+class NotConnected(Exception):
     """
-    TelemetryServer:
-    Sends and recieves from a TelemetryClient.
+    Error raised when HeartBeatClient.socket is None.
     """
-    def __init__(self, hostname, port):
+    pass
+
+
+class HeartBeatClient:
+    """
+    HeartBeatClient:
+    Connects to a HeartBeatServer.
+    """
+    def __init__(self, hostname, port, max_wait=5):
+        self.max_wait = max_wait
         self.hostname = hostname
         self.port = port
         self.socket = None
 
-    def start(self, callback):
+    def start_beating(self):
         """
-        This function blocks indefinitely, listening on a socket, so run it
-        in a new thread.
-        :param callback: Function to be called when a packet is recieved.
+        Blocks indefinitely, while sending beats to HeartBeatServer.
         :return: None
         """
         self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.socket.bind((self.hostname, self.port))
-        print(f"TelemetryServer - preparing to listen on {self.hostname}:{self.port}")
-        self.socket.listen()
+        self.socket.connect((self.hostname, self.port))
         while True:
-            connection, address = self.socket.accept()
-            with connection:
-                logging.debug(f"TelemetryServer - connection from: {address}")
-                while True:
-                    data = connection.recv(2048)
-                    if not data:
-                        break
-                    connection.sendall(callback(data))
+            self.socket.settimeout(self.max_wait)
+            try:
+                self.socket.sendall(b"FeelTheBeat")
+                self.socket.settimeout(self.max_wait)
+                _ = self.socket.recv(2048)
+            except socket.timeout:
+                logging.error("Sending or recieving heartbeat timed out!")

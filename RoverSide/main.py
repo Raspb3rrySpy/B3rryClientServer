@@ -20,6 +20,7 @@ import socket
 import logging
 import threading
 #import motorbackend
+import heartbeatserver
 import telemetryserver
 import json
 import fpv
@@ -36,6 +37,7 @@ private_ip = "localhost" #socket.gethostbyname(socket.gethostname())
 fpv_port = 20000
 motor_port = 30000
 telemetry_port = 40000
+heart_port = 50000
 
 
 def handle_telemetry(data):
@@ -45,12 +47,22 @@ def handle_telemetry(data):
         data = json.loads(data)
         if data.get("type") == "connect_data_request":
             # Client wants connection data, let's give it to them:
-            return_data = {"type": "connect_data_response", "content": {"private_ip": private_ip, "fpv_port": fpv_port,
-                                                                        "motor_port": motor_port}}
+            return_data = {"type": "connect_data_response", "content": {"private_ip": private_ip,
+                                                                        "fpv_port": fpv_port,
+                                                                        "motor_port": motor_port,
+                                                                        "heart_port": heart_port}}
             return bytes(json.dumps(return_data), "ascii")
 
     except json.JSONDecodeError as e:
         logging.error(f"Error decoding telemetry data: {e}")
+
+
+def on_heart_attack():
+    # Defibrillate:
+    from robohat import robohat
+    robohat.setRightSpeed(0)
+    robohat.setLeftSpeed(0)
+
 
 """
 logging.info("Starting motor server...")
@@ -59,6 +71,14 @@ motor_server_thread = threading.Thread(target=motor_server.start)
 motor_server_thread.start()
 logging.info("Motor server thread started!")
 """
+
+
+logging.info("Starting heartbeat server...")
+heart_server = heartbeatserver.HeartBeatServer(private_ip, heart_port)
+heart_server_thread = threading.Thread(target=heart_server.start, args=(on_heart_attack,))
+heart_server_thread.start()
+logging.info("Heartbeat server thread started!")
+
 
 logging.info("Starting telemetry server...")
 telemetry_server = telemetryserver.TelemetryServer(private_ip, telemetry_port)

@@ -1,6 +1,6 @@
 """
-telemetryserver.py
-Socket based telemetry server.
+heartbeatserver.py
+Calls back when host goes out of range.
 Copyright (C) 2023 Aiden Bohlander
 
 This program is free software: you can redistribute it and/or modify
@@ -18,17 +18,20 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 import socket
 import logging
+import time
 
 
-class TelemetryServer:
+class HeartBeatServer:
     """
-    TelemetryServer:
-    Sends and recieves from a TelemetryClient.
+    HeartBeatServer:
+    Calls back when client disconnects, and sends ping time to client.
     """
-    def __init__(self, hostname, port):
+    def __init__(self, hostname, port, max_wait=5):
         self.hostname = hostname
         self.port = port
+        self.last_packet_time = None
         self.socket = None
+        self.max_wait = max_wait
 
     def start(self, callback):
         """
@@ -39,14 +42,18 @@ class TelemetryServer:
         """
         self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.socket.bind((self.hostname, self.port))
-        print(f"TelemetryServer - preparing to listen on {self.hostname}:{self.port}")
         self.socket.listen()
         while True:
             connection, address = self.socket.accept()
             with connection:
-                logging.debug(f"TelemetryServer - connection from: {address}")
+                logging.debug(f"HeartBeatServer - connection from: {address}")
                 while True:
-                    data = connection.recv(2048)
-                    if not data:
-                        break
-                    connection.sendall(callback(data))
+                    connection.settimeout(self.max_wait)
+                    try:
+                        _ = connection.recv(2048)
+                        connection.sendall(bytes(str(int(time.time())), "ascii"))
+                    except (socket.timeout, ConnectionResetError, ConnectionError, BrokenPipeError):
+                        # Uh, oh
+                        logging.critical("Heartbeat lost!")
+                        # I said I'd call you back, right?
+                        callback()
