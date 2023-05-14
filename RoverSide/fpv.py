@@ -16,6 +16,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
+import time
 import cv2
 import logging
 from flask import Flask, Response, render_template, request
@@ -25,17 +26,24 @@ class FPVServer:
     def __init__(self, host, port):
         self.host = host
         self.port = port
+        self.writer = None
         self.camera = None
+        self.recording = False
         self.app = Flask(__name__)
         self.app.route('/')(self.stream)
+        self.app.route('/start_rec')(self.start_recording)
+        self.app.route('/stop_rec')(self.stop_recording)
+        self.app.route('/photo')(self.take_photo)
 
     def get_frames(self):
         while True:
-            success, frame = self.camera.read()  # read the camera frame
+            success, frame = self.camera.read()
             if not success:
                 break
             else:
                 _, buffer = cv2.imencode('.jpg', frame)
+                if self.recording:
+                    self.writer.write(frame)
                 frame = buffer.tobytes()
                 yield (b'--frame\r\n'
                        b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
@@ -48,6 +56,24 @@ class FPVServer:
         self.camera = cv2.VideoCapture(0)
         logging.info(f"Preparing to run FPV server on {self.host}:{self.port}")
         self.app.run(host=self.host, port=self.port)
+
+    def start_recording(self):
+        logging.info("Starting to record...")
+        width = int(self.camera.get(cv2.CAP_PROP_FRAME_WIDTH))
+        height = int(self.camera.get(cv2.CAP_PROP_FRAME_HEIGHT))
+        self.writer = cv2.VideoWriter(f"video-{int(time.time())}.mp4",
+                                      cv2.VideoWriter_fourcc(*'DIVX'), 20, (width, height))
+        self.recording = True
+
+    def stop_recording(self):
+        logging.info("Stopped recording...")
+        self.recording = False
+        self.writer.release()
+
+    def take_photo(self):
+        success, frame = self.camera.read()
+        if success:
+            cv2.imwrite(f"img-{int(time.time())}.jpg", frame)
 
 
 if __name__ == "__main__":
