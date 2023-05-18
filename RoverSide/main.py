@@ -19,7 +19,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 import socket
 import logging
 import threading
-#import motorbackend
+import motorbackend
 import heartbeatserver
 import telemetryserver
 import json
@@ -33,7 +33,7 @@ logging.basicConfig(filename="b3rry.log",
 logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
 
 
-private_ip = "localhost" #socket.gethostbyname(socket.gethostname())
+private_ip = socket.gethostbyname(socket.gethostname())
 fpv_port = 20000
 motor_port = 30000
 telemetry_port = 40000
@@ -64,13 +64,11 @@ def on_heart_attack():
     robohat.setLeftSpeed(0)
 
 
-"""
 logging.info("Starting motor server...")
 motor_server = motorbackend.MotorServer(private_ip, motor_port)
 motor_server_thread = threading.Thread(target=motor_server.start)
 motor_server_thread.start()
 logging.info("Motor server thread started!")
-"""
 
 
 logging.info("Starting heartbeat server...")

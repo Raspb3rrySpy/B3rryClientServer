@@ -88,7 +88,16 @@
             width: 50px;
             top: 20px;
             left: 90px;
-            font-size: 30px;
+            font-size: 20px;
+            color: red;
+        }
+        #viewlog {
+            position: absolute;
+            height: 50px;
+            width: 50px;
+            top: 20px;
+            right: 100px;
+            font-size: 20px;
         }
         .center {
             display: flex;
@@ -156,6 +165,34 @@
             -ms-transform: translateX(26px);
             transform: translateX(26px);
         }
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+        .modal-content {
+            margin: auto;
+            padding: 20px;
+            width: 80%;
+            overflow: auto;
+            border-radius: 4px;
+            background-color: #808080;
+            color: #333;
+        }
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
     </style>
     <script src="../static/nipplejs.min.js"></script>
 </head>
@@ -175,10 +212,20 @@
         <div class="icon baseline"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 128C0 92.7 28.7 64 64 64H320c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128zM559.1 99.8c10.4 5.6 16.9 16.4 16.9 28.2V384c0 11.8-6.5 22.6-16.9 28.2s-23 5-32.9-1.6l-96-64L416 337.1V320 192 174.9l14.2-9.5 96-64c9.8-6.5 22.4-7.2 32.9-1.6z"/></svg></div>
     </div>
     <div id="stopvideo" class="button center" onclick="get('{{ fpv_url }}/stop_rec');document.getElementById('startvideo').style.display='flex';this.style.display='none'">
-        <div class="icon baseline"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm192-96H320c17.7 0 32 14.3 32 32V320c0 17.7-14.3 32-32 32H192c-17.7 0-32-14.3-32-32V192c0-17.7 14.3-32 32-32z"/></svg></div>
+        <div class="icon baseline"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96z"/></svg></div>
     </div>
-    
+    <div id="viewlog" class="button center" onclick="document.getElementById('logmodal').style.display='block'">
+        <div class="icon baseline"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384v38.6C310.1 219.5 256 287.4 256 368c0 59.1 29.1 111.3 73.7 143.3c-3.2 .5-6.4 .7-9.7 .7H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0L384 128zm48 96a144 144 0 1 1 0 288 144 144 0 1 1 0-288zm0 240a24 24 0 1 0 0-48 24 24 0 1 0 0 48zm0-192c-8.8 0-16 7.2-16 16v80c0 8.8 7.2 16 16 16s16-7.2 16-16V288c0-8.8-7.2-16-16-16z"/></svg></div>
+    </div>
     <div id="leftjoy"></div>
+    <div class="modal" id="logmodal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('logmodal').style.display='none'">&times;</span>
+            <div>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam dolore ea modi officiis velit fuga explicabo sequi, quis vitae. Vel iure quisquam expedita, eaque esse obcaecati saepe placeat itaque doloribus?
+            </div>
+        </div>
+    </div>
     <script>
         function $(id){
             return document.getElementById(id)

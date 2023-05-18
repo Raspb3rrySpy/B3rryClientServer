@@ -44,6 +44,7 @@ class Server:
         self.app.route("/pantilt")(self.pantilt)
         self.app.route("/turbo")(self.turbo)
         self.app.route("/connect")(self.connect)
+        self.app.route("/clientlog")(self.get_log)
 
     def index(self):
         return render_template("index.html")
@@ -69,7 +70,7 @@ class Server:
                 self.heart_client = heartbeatclient.HeartBeatClient(remote_ip, heart_port)
                 heart_thread = threading.Thread(target=self.heart_client.start_beating)
                 heart_thread.start()
-                #self.motor_handler.connect()
+                self.motor_handler.connect()
                 return render_template("client.html", fpv_url=f"http://{remote_ip}:{fpv_port}")
         return ""
 
@@ -96,6 +97,20 @@ class Server:
     def turbo(self):
         self.motor_handler.toggle_turbo()
         return ""
+
+    def get_log(self):
+        return self.get_client_log()
+
+    @staticmethod
+    def get_client_log():
+        file_path = logging.getLoggerClass().root.handlers[0].baseFilename
+        try:
+            with open(file_path, "r") as file:
+                log_data = file.read()
+                return log_data
+        except (FileNotFoundError, OSError) as e:
+            logging.debug(f"Unable to get log data - error: {e}")
+            return ""
 
     def start(self):
         logging.info(f"Preparing to client server on {self.host}:{self.port}...")
