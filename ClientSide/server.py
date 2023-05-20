@@ -29,7 +29,6 @@ import heartbeatclient
 
 class Server:
     def __init__(self, host, port):
-        # Initialize Flask:
         self.app = Flask(__name__)
         self.host = host
         self.port = port
@@ -97,20 +96,6 @@ class Server:
     def turbo(self):
         self.motor_handler.toggle_turbo()
         return ""
-
-    def get_log(self):
-        return self.get_client_log()
-
-    @staticmethod
-    def get_client_log():
-        file_path = logging.getLoggerClass().root.handlers[0].baseFilename
-        try:
-            with open(file_path, "r") as file:
-                log_data = file.read()
-                return log_data
-        except (FileNotFoundError, OSError) as e:
-            logging.debug(f"Unable to get log data - error: {e}")
-            return ""
 
     def start(self):
         logging.info(f"Preparing to client server on {self.host}:{self.port}...")
