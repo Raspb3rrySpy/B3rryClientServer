@@ -25,7 +25,7 @@ class LogServer:
         self.app = Flask(__name__)
         self.host = host
         self.port = port
-        self.app.route("/log")(self.log)
+        self.app.route("/")(self.log)
 
     def log(self):
         return self.get_log()

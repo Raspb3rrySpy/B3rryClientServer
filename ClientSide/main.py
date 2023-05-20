@@ -20,16 +20,19 @@ import sys
 import threading
 import logging
 import server
+import logserver
 
+
+host = "localhost"
+server_port = 8080
 
 logging.basicConfig(filename="b3rry.log",
                     format="%(asctime)s - %(name)s - %(process)d - %(levelname)s - %(message)s",
                     datefmt='%d-%b-%y %H:%M:%S', level=logging.NOTSET)
 logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
 
-
 logging.info("Starting server...")
-client_server = server.Server("localhost", 8080)
+client_server = server.Server(host, server_port)
 server_thread = threading.Thread(target=client_server.start)
 server_thread.start()
 logging.info("Server thread started!")

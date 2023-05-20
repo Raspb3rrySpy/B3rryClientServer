@@ -43,7 +43,7 @@ class Server:
         self.app.route("/pantilt")(self.pantilt)
         self.app.route("/turbo")(self.turbo)
         self.app.route("/connect")(self.connect)
-        self.app.route("/clientlog")(self.get_log)
+        self.app.route("/log")(self.log)
 
     def index(self):
         return render_template("index.html")
@@ -96,6 +96,20 @@ class Server:
     def turbo(self):
         self.motor_handler.toggle_turbo()
         return ""
+
+    def log(self):
+        return self.get_log()
+
+    @staticmethod
+    def get_log():
+        file_path = logging.getLoggerClass().root.handlers[0].baseFilename
+        try:
+            with open(file_path, "r") as file:
+                log_data = file.read()
+                return log_data
+        except (FileNotFoundError, OSError) as e:
+            logging.debug(f"Unable to get log data - error: {e}")
+            return ""
 
     def start(self):
         logging.info(f"Preparing to client server on {self.host}:{self.port}...")

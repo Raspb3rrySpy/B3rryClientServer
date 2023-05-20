@@ -119,40 +119,15 @@
             right: 0;
             top: 0;
         }
-        .switch {
-            position: relative;
+        .spanbutton {
             display: inline-block;
-            width: 60px;
-            height: 34px;
+            padding: 10px;
+            background-color: #70707070;
+            margin: 1px;
+            margin-bottom: 10px;
         }
-        .switch input { 
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-        .slider {
-            border-radius: 34px;
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #80808050;
-            -webkit-transition: .4s;
-            transition: .4s;
-        }
-        .slider:before {
-            content: "";
-            border-radius: 50%;
-            position: absolute;
-            height: 26px;
-            width: 26px;
-            left: 4px;
-            bottom: 4px;
-            background-color: #80808080;
-            -webkit-transition: .4s;
-            transition: .4s;
+        .spanbutton:hover {
+            background-color: #60606070;
         }
         input:checked + .slider {
             background-color: #80808070;
@@ -168,7 +143,7 @@
         .modal {
             display: none; /* Hidden by default */
             position: fixed; /* Stay in place */
-            z-index: 1; /* Sit on top */
+            z-index: 1000; /* Sit on top */
             padding-top: 100px; /* Location of the box */
             left: 0;
             top: 0;
@@ -192,6 +167,12 @@
             float: right;
             font-size: 28px;
             font-weight: bold;
+            cursor: pointer;
+        }
+        .logframe {
+            height: 90%;
+            width: 98%;
+            overflow: scroll;
         }
     </style>
     <script src="../static/nipplejs.min.js"></script>
@@ -221,9 +202,13 @@
     <div class="modal" id="logmodal">
         <div class="modal-content">
             <span class="close" onclick="document.getElementById('logmodal').style.display='none'">&times;</span>
-            <div>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam dolore ea modi officiis velit fuga explicabo sequi, quis vitae. Vel iure quisquam expedita, eaque esse obcaecati saepe placeat itaque doloribus?
-            </div>
+            <div><span class="spanbutton" onclick="document.getElementById('roverlog').style.display='none'; document.getElementById('clientlog').style.display='block'">Client Log</span><span class="spanbutton" onclick="document.getElementById('roverlog').style.display='block'; document.getElementById('clientlog').style.display='none'">Server Log</span><span class="spanbutton">Refresh Logs<span></span></div>
+            <iframe class="logframe" id="clientlog" src="http://localhost:8080/log" frameborder="0"> 
+
+            </iframe>
+            <iframe class="logframe" id="roverlog" src="" frameborder="0" style="display: none;"> 
+
+            </iframe>
         </div>
     </div>
     <script>
