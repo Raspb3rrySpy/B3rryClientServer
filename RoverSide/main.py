@@ -19,7 +19,6 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 import socket
 import logging
 import threading
-import motorbackend
 import heartbeatserver
 import telemetryserver
 import json
@@ -32,13 +31,13 @@ logging.basicConfig(filename="b3rry.log",
                     datefmt='%d-%b-%y %H:%M:%S', level=logging.NOTSET)
 logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
 
+debug = True
 
 private_ip = socket.gethostbyname(socket.gethostname())
 fpv_port = 20000
 motor_port = 30000
 telemetry_port = 40000
 heart_port = 50000
-
 
 def handle_telemetry(data):
     if not data:
@@ -64,19 +63,23 @@ def on_heart_attack():
     robohat.setLeftSpeed(0)
 
 
-logging.info("Starting motor server...")
-motor_server = motorbackend.MotorServer(private_ip, motor_port)
-motor_server_thread = threading.Thread(target=motor_server.start)
-motor_server_thread.start()
-logging.info("Motor server thread started!")
+if debug:
+    on_heart_attack = lambda _: _
 
+
+if not debug:
+    import motorbackend
+    logging.info("Starting motor server...")
+    motor_server = motorbackend.MotorServer(private_ip, motor_port)
+    motor_server_thread = threading.Thread(target=motor_server.start)
+    motor_server_thread.start()
+    logging.info("Motor server thread started!")
 
 logging.info("Starting heartbeat server...")
 heart_server = heartbeatserver.HeartBeatServer(private_ip, heart_port)
 heart_server_thread = threading.Thread(target=heart_server.start, args=(on_heart_attack,))
 heart_server_thread.start()
 logging.info("Heartbeat server thread started!")
-
 
 logging.info("Starting telemetry server...")
 telemetry_server = telemetryserver.TelemetryServer(private_ip, telemetry_port)

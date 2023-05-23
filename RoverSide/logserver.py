@@ -28,7 +28,9 @@ class LogServer:
         self.app.route("/log")(self.log)
 
     def log(self):
-        return self.get_log()
+        resp = Response(self.get_log())
+        resp.headers.add('Access-Control-Allow-Origin', '*')
+        return resp
 
     @staticmethod
     def get_log():
@@ -42,5 +44,5 @@ class LogServer:
             return ""
 
     def start(self):
-        logging.info(f"Preparing to log server on {self.host}:{self.port}...")
+        logging.info(f"Preparing to start log server on {self.host}:{self.port}...")
         self.app.run(host=self.host, port=self.port)
