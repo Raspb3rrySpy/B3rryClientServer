@@ -70,7 +70,9 @@ class Server:
                 heart_thread = threading.Thread(target=self.heart_client.start_beating)
                 heart_thread.start()
                 self.motor_handler.connect()
-                return render_template("client.html", fpv_url=f"http://{remote_ip}:{fpv_port}")
+                return render_template("client.html",
+                                       fpv_url=f"http://{remote_ip}:{fpv_port}",
+                                       client_log_url=f"http://{self.host}:{self.port}")
         return ""
 
     def client(self):

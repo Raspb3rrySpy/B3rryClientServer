@@ -210,7 +210,7 @@
 
             </pre>
             <pre class="logframe" id="roverlog" src="" frameborder="0" style="display: none;"> 
-
+                Rover log coming soon...
             </pre>
         </div>
     </div>
@@ -297,7 +297,7 @@
         function reloadLogs() {
             const req = new XMLHttpRequest();
             req.addEventListener("load", updateClientLog);
-            req.open("GET", "http://localhost:8080/log");
+            req.open("GET", "{{ client_log_url }}");
             req.send();
         }
 
