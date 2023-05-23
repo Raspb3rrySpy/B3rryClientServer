@@ -28,10 +28,11 @@ import heartbeatclient
 
 
 class Server:
-    def __init__(self, host, port):
+    def __init__(self, host, port, debug):
         self.app = Flask(__name__)
         self.host = host
         self.port = port
+        self.debug = debug
         self.motor_handler = None
         self.telemetry_client = None
         self.heart_client = None
@@ -51,7 +52,7 @@ class Server:
     def connect(self):
         ip = request.args.get("ip")
         port = int(request.args.get("port"))
-        if ip and port:
+        if ip and port and not debug:
             logging.info(f"Preparing to send connect_data_request to {ip}:{port}...")
             self.telemetry_client = telemetryclient.TelemetryClient(ip, port)
             request_data = {"type": "connect_data_request"}
@@ -80,7 +81,7 @@ class Server:
 
     def joystick(self):
         data = json.loads(request.args.get("data"))
-        if data:
+        if data and not self.debug:
             # Package data:
             logging.info(data)
             data = self.motor_handler.parse_joystick_data(data)
@@ -96,7 +97,8 @@ class Server:
         return ""
 
     def turbo(self):
-        self.motor_handler.toggle_turbo()
+        if not self.debug:
+            self.motor_handler.toggle_turbo()
         return ""
 
     def log(self):

@@ -23,6 +23,8 @@ import server
 import logserver
 
 
+debug = True
+
 host = "localhost"
 server_port = 8080
 
@@ -32,7 +34,7 @@ logging.basicConfig(filename="b3rry.log",
 logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
 
 logging.info("Starting server...")
-client_server = server.Server(host, server_port)
+client_server = server.Server(host, server_port, debug)
 server_thread = threading.Thread(target=client_server.start)
 server_thread.start()
 logging.info("Server thread started!")
