@@ -120,6 +120,7 @@
             top: 0;
         }
         .spanbutton {
+            user-select: none;
             display: inline-block;
             padding: 10px;
             background-color: #70707070;
@@ -170,9 +171,11 @@
             cursor: pointer;
         }
         .logframe {
-            height: 90%;
+            font-family: monospace;
+            height: 60vmin;
             width: 98%;
-            overflow: scroll;
+            overflow-x: scroll;
+            overflow-y: scroll;
         }
     </style>
     <script src="../static/nipplejs.min.js"></script>
@@ -202,13 +205,13 @@
     <div class="modal" id="logmodal">
         <div class="modal-content">
             <span class="close" onclick="document.getElementById('logmodal').style.display='none'">&times;</span>
-            <div><span class="spanbutton" onclick="document.getElementById('roverlog').style.display='none'; document.getElementById('clientlog').style.display='block'">Client Log</span><span class="spanbutton" onclick="document.getElementById('roverlog').style.display='block'; document.getElementById('clientlog').style.display='none'">Server Log</span><span class="spanbutton">Refresh Logs<span></span></div>
-            <iframe class="logframe" id="clientlog" src="http://localhost:8080/log" frameborder="0"> 
+            <div><span class="spanbutton" onclick="document.getElementById('roverlog').style.display='none'; document.getElementById('clientlog').style.display='block'">Client Log</span><span class="spanbutton" onclick="document.getElementById('roverlog').style.display='block'; document.getElementById('clientlog').style.display='none'">Server Log</span><span class="spanbutton" onclick="reloadLogs()">Reload Logs</span></span></div>
+            <pre class="logframe" id="clientlog" src="http://localhost:8080/log" frameborder="0"> 
 
-            </iframe>
-            <iframe class="logframe" id="roverlog" src="" frameborder="0" style="display: none;"> 
+            </pre>
+            <pre class="logframe" id="roverlog" src="" frameborder="0" style="display: none;"> 
 
-            </iframe>
+            </pre>
         </div>
     </div>
     <script>
@@ -285,6 +288,20 @@
         $("swipezone").addEventListener("touchmove", swipeMove);
         $("swipezone").addEventListener("touchend", swipeEnd);
         $("swipezone").addEventListener("touchcancel", swipeEnd);
+
+        function updateClientLog() {
+            $("clientlog").innerHTML = this.responseText;
+            $("clientlog").scrollTop = $("clientlog").scrollHeight;
+        }
+
+        function reloadLogs() {
+            const req = new XMLHttpRequest();
+            req.addEventListener("load", updateClientLog);
+            req.open("GET", "http://localhost:8080/log");
+            req.send();
+        }
+
+        reloadLogs();
     </script>
 </body>
 

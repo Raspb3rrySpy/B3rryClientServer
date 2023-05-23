@@ -98,7 +98,9 @@ class Server:
         return ""
 
     def log(self):
-        return self.get_log()
+        resp = Response(self.get_log())
+        resp.headers.add('Access-Control-Allow-Origin', '*')
+        return resp
 
     @staticmethod
     def get_log():
