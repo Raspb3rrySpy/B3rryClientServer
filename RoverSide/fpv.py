@@ -64,16 +64,19 @@ class FPVServer:
         self.writer = cv2.VideoWriter(f"video-{int(time.time())}.mp4",
                                       cv2.VideoWriter_fourcc(*'DIVX'), 20, (width, height))
         self.recording = True
+        return ""
 
     def stop_recording(self):
         logging.info("Stopped recording...")
         self.recording = False
         self.writer.release()
+        return ""
 
     def take_photo(self):
         success, frame = self.camera.read()
         if success:
             cv2.imwrite(f"img-{int(time.time())}.jpg", frame)
+        return ""
 
 
 if __name__ == "__main__":

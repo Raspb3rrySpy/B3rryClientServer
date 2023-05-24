@@ -20,7 +20,6 @@ import sys
 import threading
 import logging
 import server
-import logserver
 
 
 debug = True

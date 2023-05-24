@@ -21,6 +21,7 @@ import logging
 import threading
 import heartbeatserver
 import telemetryserver
+import logserver
 import json
 import fpv
 import sys
@@ -38,6 +39,8 @@ fpv_port = 20000
 motor_port = 30000
 telemetry_port = 40000
 heart_port = 50000
+log_port = 60000
+
 
 def handle_telemetry(data):
     if not data:
@@ -49,7 +52,8 @@ def handle_telemetry(data):
             return_data = {"type": "connect_data_response", "content": {"private_ip": private_ip,
                                                                         "fpv_port": fpv_port,
                                                                         "motor_port": motor_port,
-                                                                        "heart_port": heart_port}}
+                                                                        "heart_port": heart_port,
+                                                                        "log_port": log_port}}
             return bytes(json.dumps(return_data), "ascii")
 
     except json.JSONDecodeError as e:
@@ -64,7 +68,8 @@ def on_heart_attack():
 
 
 if debug:
-    on_heart_attack = lambda _: _
+    def on_heart_attack():
+        pass
 
 
 if not debug:
@@ -86,6 +91,12 @@ telemetry_server = telemetryserver.TelemetryServer(private_ip, telemetry_port)
 telemetry_server_thread = threading.Thread(target=telemetry_server.start, args=(handle_telemetry,))
 telemetry_server_thread.start()
 logging.info("Telemetry server thread started!")
+
+logging.info("Starting log server...")
+log_server = logserver.LogServer(private_ip, log_port)
+log_server_thread = threading.Thread(target=log_server.start)
+log_server_thread.start()
+logging.info("Log server thread started...")
 
 logging.info("Starting FPV server...")
 fpv_server = fpv.FPVServer(private_ip, fpv_port)

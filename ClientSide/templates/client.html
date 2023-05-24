@@ -207,10 +207,10 @@
             <span class="close" onclick="document.getElementById('logmodal').style.display='none'">&times;</span>
             <div><span class="spanbutton" onclick="document.getElementById('roverlog').style.display='none'; document.getElementById('clientlog').style.display='block'">Client Log</span><span class="spanbutton" onclick="document.getElementById('roverlog').style.display='block'; document.getElementById('clientlog').style.display='none'">Server Log</span><span class="spanbutton" onclick="reloadLogs()">Reload Logs</span></span></div>
             <pre class="logframe" id="clientlog" src="http://localhost:8080/log" frameborder="0"> 
-
+                Loading Client Log ...
             </pre>
             <pre class="logframe" id="roverlog" src="" frameborder="0" style="display: none;"> 
-                Rover log coming soon...
+                Loading Rover Log ...
             </pre>
         </div>
     </div>
@@ -294,11 +294,21 @@
             $("clientlog").scrollTop = $("clientlog").scrollHeight;
         }
 
+        function updateRoverLog() {
+            $("roverlog").innerHTML = this.responseText;
+            $("roverlog").scrollTop = $("roverlog").scrollHeight;
+        }
+
         function reloadLogs() {
-            const req = new XMLHttpRequest();
-            req.addEventListener("load", updateClientLog);
-            req.open("GET", "{{ client_log_url }}");
-            req.send();
+            const clientlogreq = new XMLHttpRequest();
+            clientlogreq.addEventListener("load", updateClientLog);
+            clientlogreq.open("GET", "{{ client_log_url }}");
+            clientlogreq.send();
+
+            const roverlogreq = new XMLHttpRequest();
+            roverlogreq.addEventListener("load", updateRoverLog);
+            roverlogreq.open("GET", "{{ rover_log_url }}");
+            roverlogreq.send();
         }
 
         reloadLogs();

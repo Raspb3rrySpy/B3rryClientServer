@@ -42,18 +42,24 @@ class HeartBeatServer:
         """
         self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.socket.bind((self.hostname, self.port))
-        self.socket.listen()
+        self.socket.listen(10)
         while True:
             connection, address = self.socket.accept()
             with connection:
                 logging.debug(f"HeartBeatServer - connection from: {address}")
                 while True:
+                    timeout_count = 0
                     connection.settimeout(self.max_wait)
                     try:
                         _ = connection.recv(2048)
                         connection.sendall(bytes(str(int(time.time())), "ascii"))
+                        timeout_count = 0
                     except (socket.timeout, ConnectionResetError, ConnectionError, BrokenPipeError):
                         # Uh, oh
                         logging.critical("Heartbeat lost!")
                         # I said I'd call you back, right?
                         callback()
+                        # EMT's worst nightmare: client died:
+                        if timeout_count > 5:
+                            break
+                        timeout_count += 1

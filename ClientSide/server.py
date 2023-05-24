@@ -52,7 +52,7 @@ class Server:
     def connect(self):
         ip = request.args.get("ip")
         port = int(request.args.get("port"))
-        if ip and port and not debug:
+        if ip and port:
             logging.info(f"Preparing to send connect_data_request to {ip}:{port}...")
             self.telemetry_client = telemetryclient.TelemetryClient(ip, port)
             request_data = {"type": "connect_data_request"}
@@ -66,14 +66,17 @@ class Server:
                 fpv_port = content.get("fpv_port")
                 motor_port = content.get("motor_port")
                 heart_port = content.get("heart_port")
+                rover_log_port = content.get("log_port")
                 self.motor_handler = motorfrontend.MotorHandler(remote_ip, motor_port)
                 self.heart_client = heartbeatclient.HeartBeatClient(remote_ip, heart_port)
                 heart_thread = threading.Thread(target=self.heart_client.start_beating)
                 heart_thread.start()
-                self.motor_handler.connect()
+                if not self.debug:
+                    self.motor_handler.connect()
                 return render_template("client.html",
                                        fpv_url=f"http://{remote_ip}:{fpv_port}",
-                                       client_log_url=f"http://{self.host}:{self.port}")
+                                       client_log_url=f"http://{self.host}:{self.port}/log",
+                                       rover_log_url=f"http://{remote_ip}:{rover_log_port}/log")
         return ""
 
     def client(self):
