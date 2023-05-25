@@ -47,19 +47,20 @@ class HeartBeatServer:
             connection, address = self.socket.accept()
             with connection:
                 logging.debug(f"HeartBeatServer - connection from: {address}")
+                timeout_count = 0
                 while True:
-                    timeout_count = 0
                     connection.settimeout(self.max_wait)
                     try:
                         _ = connection.recv(2048)
                         connection.sendall(bytes(str(int(time.time())), "ascii"))
                         timeout_count = 0
-                    except (socket.timeout, ConnectionResetError, ConnectionError, BrokenPipeError):
+                    except (socket.timeout, ConnectionResetError, ConnectionError, BrokenPipeError) as e:
                         # Uh, oh
-                        logging.critical("Heartbeat lost!")
+                        logging.critical(f"Heartbeat lost due to: {e}")
                         # I said I'd call you back, right?
                         callback()
                         # EMT's worst nightmare: client died:
                         if timeout_count > 5:
+                            logging.critical("Failed to recieve more than 5 heartbeats. Giving up...")
                             break
                         timeout_count += 1
