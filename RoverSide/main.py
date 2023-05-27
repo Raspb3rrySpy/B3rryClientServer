@@ -100,4 +100,6 @@ logging.info("Log server thread started...")
 
 logging.info("Starting FPV server...")
 fpv_server = fpv.FPVServer(private_ip, fpv_port)
-fpv_server.start()
+fpv_server_thread = threading.Thread(target=fpv_server.start)
+fpv_server_thread.start()
+logging.info("FPV server thread started!")

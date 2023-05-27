@@ -20,7 +20,8 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 # Import necessary libraries
 import json
 import logging
-from flask import Flask, Response, render_template, request
+from flask import Flask, Response, render_template, request, redirect
+from werkzeug.exceptions import HTTPException
 import threading
 import motorfrontend
 import telemetryclient
@@ -46,12 +47,17 @@ class Server:
         self.app.route("/connect")(self.connect)
         self.app.route("/log")(self.log)
 
+        self.app.register_error_handler(HTTPException, self.handle_http_error)
+
     def index(self):
         return render_template("index.html")
 
     def connect(self):
         ip = request.args.get("ip")
-        port = int(request.args.get("port"))
+        try:
+            port = int(request.args.get("port"))
+        except ValueError:
+            port = None
         if ip and port:
             logging.info(f"Preparing to send connect_data_request to {ip}:{port}...")
             self.telemetry_client = telemetryclient.TelemetryClient(ip, port)
@@ -77,7 +83,9 @@ class Server:
                                        fpv_url=f"http://{remote_ip}:{fpv_port}",
                                        client_log_url=f"http://{self.host}:{self.port}/log",
                                        rover_log_url=f"http://{remote_ip}:{rover_log_port}/log")
-        return ""
+            else:
+                return self.error(f"Invalid telemetry type in telemetr: {telemetry}"), 500
+        return self.error(f"Invalid port or IP address"), 400
 
     def client(self):
         return render_template("client.html")
@@ -119,6 +127,14 @@ class Server:
         except (FileNotFoundError, OSError) as e:
             logging.debug(f"Unable to get log data - error: {e}")
             return ""
+
+    @staticmethod
+    def error(msg):
+        """Custom error handler"""
+        return render_template("error.html", msg=msg)
+
+    def handle_http_error(self, e):
+        return self.error(f"{e.code} {e.name}: {e.description}"), e.code
 
     def start(self):
         logging.info(f"Preparing to client server on {self.host}:{self.port}...")
