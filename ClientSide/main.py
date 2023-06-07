@@ -22,10 +22,10 @@ import logging
 import server
 
 
-debug = True
+debug = False
 
 host = "localhost"
-server_port = 8080
+server_port = 8090
 
 logging.basicConfig(filename="b3rry.log",
                     format="%(asctime)s - %(name)s - %(process)d - %(levelname)s - %(message)s",

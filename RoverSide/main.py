@@ -32,7 +32,7 @@ logging.basicConfig(filename="b3rry.log",
                     datefmt='%d-%b-%y %H:%M:%S', level=logging.NOTSET)
 logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
 
-debug = True
+debug = False
 
 private_ip = socket.gethostbyname(socket.gethostname())
 fpv_port = 20000
@@ -79,6 +79,8 @@ if not debug:
     motor_server_thread = threading.Thread(target=motor_server.start)
     motor_server_thread.start()
     logging.info("Motor server thread started!")
+
+    import servobackend
 
 logging.info("Starting heartbeat server...")
 heart_server = heartbeatserver.HeartBeatServer(private_ip, heart_port)

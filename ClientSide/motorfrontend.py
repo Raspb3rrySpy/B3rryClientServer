@@ -30,7 +30,7 @@ class MotorHandler:
         self.last_data_sent = None
         self.turbo = False
 
-    def parse_joystick_data(self, data: dict, scale=0.5):
+    def parse_joystick_data(self, data: dict, scale=1):
         """
         Takes raw joystick data and converts it to
         left and right motor speeds
@@ -45,10 +45,12 @@ class MotorHandler:
             # Invalid data, so nothing else to do:
             return None
         left = scale * (y + x)
-        right = scale * (y - x)
+        right = -(scale * (y - x))
         if not self.turbo:
+            logging.info("No turbo")
             left = left // 1.3
             right = right // 1.3
+            print(left, right)
         return {"left": clamp(int(left), -100, 100), "right": clamp(int(right), -100, 100)}
 
     def connect(self):

@@ -20,7 +20,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 # Import necessary libraries
 import json
 import logging
-from flask import Flask, Response, render_template, request, redirect
+from flask import Flask, Response, render_template, request, redirect, url_for
 from werkzeug.exceptions import HTTPException
 import threading
 import motorfrontend
@@ -46,7 +46,6 @@ class Server:
         self.app.route("/turbo")(self.turbo)
         self.app.route("/connect")(self.connect)
         self.app.route("/log")(self.log)
-
         self.app.register_error_handler(HTTPException, self.handle_http_error)
 
     def index(self):

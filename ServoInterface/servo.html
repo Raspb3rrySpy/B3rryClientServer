@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servo Controller - B3rry Client</title>
+    <style>
+        #servocontroller {
+            height: 100%;
+            width: 100%;
+        }
+        .point {
+            border-radius: 50%;
+            height: 5vmin;
+            width: 5vmin;
+            background-color: black;
+        }
+        .line {
+            stroke-width: 8px;
+            stroke: black;
+        }
+        .origin {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-30px, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div id="servocontroller">
+        <img src="rover.png" class="origin" height="60px">
+    </div>
+    <script>
+        class Servo {
+            constructor(angle, originx, originy, element) {
+                this.angle = angle;
+                this.originx = originx;
+                this.originy = originy;
+                this.element = element;
+            }
+
+            draw(offset) {
+                var [x, y] = drawLineFromPoint(this.originx, this.originy, this.angle+offset, 50, "line", this.element);
+                var pt = getPoint(x, y);
+                pt.classList += "point";
+                this.element.appendChild(pt);
+                console.log()
+            }
+        }
+
+        class ServoArm {
+            constructor(element, offset) {
+                this.servos = [];
+                this.element = element;
+                this.offset = offset;
+            }
+
+            add(servo) {
+                this.servos.push(servo);
+            }
+
+            drawAll() {
+                for (const servo of this.servos) {
+                    servo.draw(this.offset);
+                }
+            }
+        }
+
+        function $(id) {
+            return document.getElementById(id)
+        }
+
+        function drawLine(x1, y1, x2, y2, line_class, element=document.documentElement) {
+            element.innerHTML += `<svg style="position:absolute; height:100%; width:100%"><line class=${line_class} x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"/></svg>`
+        }
+
+        function drawLineFromPoint(x, y, angle, length, line_class, element=document.documentElement) {
+            var x1 = x;
+            var y1 = y;
+            var [x2, y2] = computeEndPoint(x, y, angle, length);
+            drawLine(x1, y1, x2, y2, line_class, element);
+            return [x2, y2]
+        }
+
+        function computeEndPoint(x, y, alpha, h) {
+            var a = Math.sin(Math.PI * alpha / 180) * h;
+            var b = Math.cos(Math.PI * alpha / 180) * h;
+            x = x + b;
+            y = y + a;
+            return [x, y]
+        }
+
+        function getPoint(x, y) {
+            return htmlToElem(`<div style="position: absolute;top:${x}px;left:${y}px;transform: translate(-50%, -50%);"></div>`)
+        }
+
+        function htmlToElem(html) {
+            var temp = document.createElement('template');
+            html = html.trim();
+            temp.innerHTML = html;
+            return temp.content.firstChild;
+        }
+
+        window.onload = function() {
+            console.log("Loading servo controller...")
+            originx = window.innerHeight/2;
+            originy = window.innerWidth/2;
+            var pt = getPoint(originx, originy);
+            pt.classList += "point";
+            $("servocontroller").appendChild(pt);
+            arm = new ServoArm($("servocontroller"), 90);
+            arm.add(new Servo(0, originx, originy, $("servocontroller")));
+            arm.drawAll();
+        }
+    </script>
+</body>
+</html>
